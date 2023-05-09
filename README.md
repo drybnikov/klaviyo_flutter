@@ -1,4 +1,4 @@
-# intercom_flutter
+# klaviyo_flutter
 
 [![Pub](https://img.shields.io/pub/v/klaviyo_flutter.svg)](https://pub.dev/packages/klaviyo_flutter)
 ![CI](https://github.com/drybnikov/klaviyo_flutter/workflows/CI/badge.svg)
@@ -86,24 +86,27 @@ Make sure that you have a `NSPhotoLibraryUsageDescription` entry in your `Info.p
 
 This plugin works in combination with
 the [`firebase_messaging`](https://pub.dev/packages/firebase_messaging) plugin to receive Push
-Notifications. To set this up:
+Notifications.
 
-* First, implement [`firebase_messaging`](https://pub.dev/packages/firebase_messaging)
-* Then, add the Firebase server key to Intercom, as
-  described [here](https://developers.intercom.com/installing-intercom/docs/android-fcm-push-notifications#section-step-3-add-your-server-key-to-intercom-for-android-settings) (
-  you can skip 1 and 2 as you have probably done them while configuring `firebase_messaging`)
-* Follow the steps as
-  described [here](https://developers.intercom.com/installing-intercom/docs/ios-push-notifications)
-  to enable push notification in iOS.
-* Starting from Android 13 you may need to ask for notification permissions (as of version
-  13 `firebase_messaging` should support that)
-* Make sure that your app's `MainActivity` extends `FlutterFragmentActivity` (you can check the
-  example)
-* Ask FirebaseMessaging for the token that we need to send to Intercom, and give it to Intercom (so
-  Intercom can send push messages to the correct device), please note that in order to receive push
-  notifications in your iOS app, you have to send the APNS token to Intercom. The example below
-  uses [`firebase_messaging`](https://pub.dev/packages/firebase_messaging) to get either the FCM or
-  APNS token based on the platform:
+### Prerequisites:
+
+- Firebase account
+- Familiarity with [Firebase](https://firebase.google.com/docs/cloud-messaging/android/client)
+  documentation.
+
+### KlaviyoPushService
+
+[//]: # (TODO Document firebase setup, google services JSON etc)
+The Klaviyo Push SDK for Android works as a wrapper around `FirebaseMessagingService` so the
+setup process is very similar to the Firebase client documentation linked above.
+You should follow all other setup recommendations from the FCM documentation.
+To specify a notification icon, add the following metadata to your app manifest.
+Absent this, the application's launcher icon will be used.
+
+```xml
+<meta-data android:name="com.klaviyo.push.default_notification_icon"
+    android:resource="{YOUR_ICON_RESOURCE}" />
+```
 
 ```dart
 
