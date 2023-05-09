@@ -45,7 +45,6 @@ class App extends StatelessWidget {
     );
   }
 }
-
 ```
 
 See
@@ -104,6 +103,7 @@ To specify a notification icon, add the following metadata to your app manifest.
 Absent this, the application's launcher icon will be used.
 
 ```xml
+
 <meta-data android:name="com.klaviyo.push.default_notification_icon"
     android:resource="{YOUR_ICON_RESOURCE}" />
 ```
