@@ -1,0 +1,1666 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 94078A06C17E946ADC1F2C06726219E5 /* Build configuration list for PBXAggregateTarget "Flutter" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = Flutter;
+			productName = Flutter;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		03463F2450CA6B76ACBEC7DAE6FBE37F /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEF096606FD3D99D6CC9DBA2586257 /* Misc.swift */; };
+		07B1FB6E10E9E8ED7A7DC5048F43F83D /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778D532A4AB11ADA31495D830EBC9CFA /* AnyDecodable.swift */; };
+		0E65ED9B78D79851CE0584E73478329B /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17328A863854EF2CBE23F7C2C7793077 /* FileUtils.swift */; };
+		1D4C9C6E64837BC2E6593512C2DB0791 /* KlaviyoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30DFDD5FE6AB1F5C8D2376E7FBA1C1E /* KlaviyoState.swift */; };
+		1E0CB9E36DB4DADC4723D52B64BEA892 /* Pods-Runner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C932BD54DBB963102A89E0F9E3948 /* Pods-Runner-dummy.m */; };
+		1EB20974EDD2C125BF209D36282C6B75 /* KlaviyoFlutterPlugin.h_ in Sources */ = {isa = PBXBuildFile; fileRef = 803CF4103B2997A999AF932C7748012E /* KlaviyoFlutterPlugin.h_ */; };
+		1F35FA2E5C86C7EC4017BC2EA0FD6AD4 /* KlaviyoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631E14C39F8CE11438E08D967ED46167 /* KlaviyoModels.swift */; };
+		22318931C5E1DF059C69FC79775EFB16 /* KlaviyoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6964B805B9F664514C675D8E9F624346 /* KlaviyoAPI.swift */; };
+		2253AFB4978726994D6040F722F6E947 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E34B23B45B7580C1EC9B60264919C8 /* Store.swift */; };
+		39A22ED6301FC726619EE2B65609AEF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3AB40FCA5007240AB8082BF6EDC229FF /* AnyEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3388A7250F1C4C481AD82F8B647D459 /* AnyEncodable.swift */; };
+		3AB48DCC22F76C0489C10A56B1633053 /* Cancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A005F353F4C22F45AF3CE695A9AE2685 /* Cancellation.swift */; };
+		3C0955CA89770304328B10F32AE54B93 /* StateChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E0C49F9EBFEECFF0B93709D703E3D8 /* StateChangePublisher.swift */; };
+		4477B055F1AA93BC20C469DF786F8E35 /* APIRequestErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E226D00F62DE14EED1DA0F61B882AD /* APIRequestErrorHandling.swift */; };
+		47C14F8D9FCD91636099BAA1667CEA07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		4DC961521AA72E4D8E89A6650F1F3FDA /* Pods-Runner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96BF45FBE2BC9AD7B2D7E56D01B5EE46 /* Pods-Runner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		528A8B03522253CAFC8784045E81AD26 /* KlaviyoEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C9889ACD0567EE5EC35C4AA2EF8521 /* KlaviyoEnvironment.swift */; };
+		55822B0B68C340EE949B79D94D3478C5 /* StateManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF91A04FC3C00FC3154B73FD4FCCE8E /* StateManagement.swift */; };
+		5A0F9081F54422882D0238712F014DE3 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780AB510C1B7A4BA51127C4C456288A4 /* AnyCodable.swift */; };
+		5A67BB3E284F0ADFAF49C251D395BAF5 /* klaviyo_flutter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F66433FC85787369AAF737B50CF6C9 /* klaviyo_flutter-dummy.m */; };
+		600536ECBF749E405013F6E609B91A0F /* Klaviyo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBBD9673BE4DA9897A348E27B442DE7 /* Klaviyo.swift */; };
+		700A0FE79C29E42EB6F21997D03B28C5 /* SDKRequestIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89B604277E742F8072A6E97378A30C /* SDKRequestIterator.swift */; };
+		850D93A027F7D7DB0E8EAA3681FCEA27 /* AnyCodable-FlightSchool-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D82D376126DF1552EBAC41D83CB03D4D /* AnyCodable-FlightSchool-dummy.m */; };
+		871D19313BECAC904DDF62D93BCD09AD /* AppLifeCycleEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D25B912C049CEEBB832A28DB566E73 /* AppLifeCycleEvents.swift */; };
+		9DB700C304F711711911428A1D42CA3E /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF7688535CB61B7D977D00CAE16A0A2 /* Version.swift */; };
+		9F9FCC925F0236FCD878EF3C76155389 /* KlaviyoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F8E268C4E5825CDF81F70236DA94A6E /* KlaviyoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A05F1ACE4A133FEA7218D6E831ACF306 /* klaviyo_flutter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5BC199CDC3AE39E6EA47601639F582 /* klaviyo_flutter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A882D7CC02B4EE288A7210F1760DD06C /* InternalAPIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5904C7C5F2093508F6A24084FFB3C43 /* InternalAPIModels.swift */; };
+		A8C685B4728B13F4F9AA86A05B7B4630 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A9F8DB4AD1D0D525ED85BDC767945916 /* AppContextInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BADE763D16D10AC8DA3C1F34AA380B8 /* AppContextInfo.swift */; };
+		AAB7B9C9B95583201DB5A69233EDD30B /* AnyCodable-FlightSchool-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B52480045CF169658BD3A08740F73149 /* AnyCodable-FlightSchool-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0C6ABCED2CCF828A48A8D4D0FEAED84 /* ReducerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D958D71E413F19A4F8AF99A3F7E994 /* ReducerProtocol.swift */; };
+		BF651F61244E203EE07AD670B7B2E7A7 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD90D2F69507A7C036450ADB76A228 /* Effect.swift */; };
+		C0FEB8D2D38D98FE466371C7AD42CA20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C6DBF66EAB62294C4F4368E392E1A491 /* ConcurrencySupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE884C5E3F7D313EF69A065AD26AA52 /* ConcurrencySupport.swift */; };
+		C7EEE8A0B7696029B3E5E3C5DF6F138A /* KlaviyoFlutterPlugin.m_ in Sources */ = {isa = PBXBuildFile; fileRef = EDF91E2C16D6D0B6994C4AD144112081 /* KlaviyoFlutterPlugin.m_ */; };
+		D7E73E1EFD8A345B156CF2BB9F8F6F9B /* KlaviyoSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FDCCCE8DBE75E4766DEF9E3DD76D67 /* KlaviyoSwift-dummy.m */; };
+		E173E0B0F73E08526A8191BE63DCF24E /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5539B6BA39758E30507569A642A12 /* Create.swift */; };
+		EB9FC6BB45C075B1B301115257663A0B /* KlaviyoFlutterPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B942F24E1399CB8553C778443548CC /* KlaviyoFlutterPlugin.swift */; };
+		F1E4DC7B3911A8A6B8466EF674AA4283 /* ReachabilitySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDDB9DD64724E24C1013ACE09C2CBDB /* ReachabilitySwift.swift */; };
+		F2FD6B61E6AD46269CD8692723C67348 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6DFFBDF592A4A18CF2DADD8FD53E67 /* Publisher.swift */; };
+		F4A864B300E668FB358B6E2398CF1454 /* LoggerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9983E4CEC71A51C9AFFB9BBDACF68527 /* LoggerClient.swift */; };
+		F51B38B75526C5F2366D70A5E37F961D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A713E4484962F3917E5E7FB199049C17 /* NetworkSession.swift */; };
+		FFC717CA0032198CC2AE182BD018DDA9 /* ArchivalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320A573FB3269545A9D043829F232AB3 /* ArchivalUtils.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		514334176CB924D4BEDE008A2AF21254 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+		ADC7C47AE4CE3D7B471738C69BFAD9ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B1349DEE8C0A3A2839E9C9A03465ED9;
+			remoteInfo = "AnyCodable-FlightSchool";
+		};
+		CEA4CAD18314B86E56B50FECDC75E6C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B1349DEE8C0A3A2839E9C9A03465ED9;
+			remoteInfo = "AnyCodable-FlightSchool";
+		};
+		CFBBA55CE58F12610399CBD23E3EB548 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 393E4D1E9667AFD1C6B61ED719FABDC4;
+			remoteInfo = klaviyo_flutter;
+		};
+		D3BEEAA601A0DE3CAC90D9ED922D2C96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61518D6062CE8F2EDA7A3BDAEDE9CA44;
+			remoteInfo = KlaviyoSwift;
+		};
+		E7DD755631D667A459CFE20A3458FB9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61518D6062CE8F2EDA7A3BDAEDE9CA44;
+			remoteInfo = KlaviyoSwift;
+		};
+		FED422C6C08DE73254C1DE4105CEA22E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EFDDC32A34D56D411E640A81DCD9E73;
+			remoteInfo = Flutter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		022C873B3E75F61BA6C280CED7BDC445 /* klaviyo_flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = klaviyo_flutter.debug.xcconfig; sourceTree = "<group>"; };
+		0BADE763D16D10AC8DA3C1F34AA380B8 /* AppContextInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppContextInfo.swift; path = Sources/KlaviyoSwift/AppContextInfo.swift; sourceTree = "<group>"; };
+		0D5BC199CDC3AE39E6EA47601639F582 /* klaviyo_flutter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "klaviyo_flutter-umbrella.h"; sourceTree = "<group>"; };
+		0E606CA876ECD65DD61CEE9F3FC01D30 /* AnyCodable-FlightSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "AnyCodable-FlightSchool.debug.xcconfig"; sourceTree = "<group>"; };
+		0E6DFFBDF592A4A18CF2DADD8FD53E67 /* Publisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Publisher.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/Publisher.swift; sourceTree = "<group>"; };
+		0F8E268C4E5825CDF81F70236DA94A6E /* KlaviyoSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KlaviyoSwift-umbrella.h"; sourceTree = "<group>"; };
+		11B942F24E1399CB8553C778443548CC /* KlaviyoFlutterPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KlaviyoFlutterPlugin.swift; path = ../../../../../../../ios/Classes/KlaviyoFlutterPlugin.swift; sourceTree = "<group>"; };
+		12D908BDBA6A21FFDCA212500EE5B873 /* Flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Flutter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		17328A863854EF2CBE23F7C2C7793077 /* FileUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileUtils.swift; path = Sources/KlaviyoSwift/FileUtils.swift; sourceTree = "<group>"; };
+		1DE884C5E3F7D313EF69A065AD26AA52 /* ConcurrencySupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConcurrencySupport.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/ConcurrencySupport.swift; sourceTree = "<group>"; };
+		1FDDB9DD64724E24C1013ACE09C2CBDB /* ReachabilitySwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReachabilitySwift.swift; path = Sources/KlaviyoSwift/Vendor/ReachabilitySwift.swift; sourceTree = "<group>"; };
+		24E0C49F9EBFEECFF0B93709D703E3D8 /* StateChangePublisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StateChangePublisher.swift; path = Sources/KlaviyoSwift/StateChangePublisher.swift; sourceTree = "<group>"; };
+		25D8D82C10FD2A8104F1C1AF9598F363 /* klaviyo_flutter */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = klaviyo_flutter; path = klaviyo_flutter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		261BC68FC1408FDE9F058FFDA0DF2E0E /* klaviyo_flutter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = klaviyo_flutter.modulemap; sourceTree = "<group>"; };
+		300F9C256EB1129B2F15BCB7FFE245BE /* klaviyo_flutter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "klaviyo_flutter-prefix.pch"; sourceTree = "<group>"; };
+		317C26B9A7CEDD34ADE8F37FAAB7AC20 /* Pods-Runner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Runner-frameworks.sh"; sourceTree = "<group>"; };
+		320A573FB3269545A9D043829F232AB3 /* ArchivalUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArchivalUtils.swift; path = Sources/KlaviyoSwift/ArchivalUtils.swift; sourceTree = "<group>"; };
+		39F66433FC85787369AAF737B50CF6C9 /* klaviyo_flutter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "klaviyo_flutter-dummy.m"; sourceTree = "<group>"; };
+		43AD90D2F69507A7C036450ADB76A228 /* Effect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Effect.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/Effect.swift; sourceTree = "<group>"; };
+		50D281CFCB9C793321DE7DA1FCB31CE4 /* AnyCodable-FlightSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "AnyCodable-FlightSchool.release.xcconfig"; sourceTree = "<group>"; };
+		51825CD8F0558EFA53D9510F0E5BFA16 /* Pods-Runner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Runner-Info.plist"; sourceTree = "<group>"; };
+		52AF96361134921F4261492B45972F95 /* KlaviyoSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KlaviyoSwift-prefix.pch"; sourceTree = "<group>"; };
+		54FEF096606FD3D99D6CC9DBA2586257 /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/Misc.swift; sourceTree = "<group>"; };
+		59E226D00F62DE14EED1DA0F61B882AD /* APIRequestErrorHandling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = APIRequestErrorHandling.swift; path = Sources/KlaviyoSwift/APIRequestErrorHandling.swift; sourceTree = "<group>"; };
+		5FF7688535CB61B7D977D00CAE16A0A2 /* Version.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Version.swift; path = Sources/KlaviyoSwift/Version.swift; sourceTree = "<group>"; };
+		5FF91A04FC3C00FC3154B73FD4FCCE8E /* StateManagement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StateManagement.swift; path = Sources/KlaviyoSwift/StateManagement.swift; sourceTree = "<group>"; };
+		631E14C39F8CE11438E08D967ED46167 /* KlaviyoModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KlaviyoModels.swift; path = Sources/KlaviyoSwift/KlaviyoModels.swift; sourceTree = "<group>"; };
+		64D25B912C049CEEBB832A28DB566E73 /* AppLifeCycleEvents.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppLifeCycleEvents.swift; path = Sources/KlaviyoSwift/AppLifeCycleEvents.swift; sourceTree = "<group>"; };
+		669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Runner"; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		673899F465EF2DFFA8DCAAB92CAB62D4 /* AnyCodable-FlightSchool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "AnyCodable-FlightSchool.modulemap"; sourceTree = "<group>"; };
+		67E34B23B45B7580C1EC9B60264919C8 /* Store.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Store.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/Store.swift; sourceTree = "<group>"; };
+		6964B805B9F664514C675D8E9F624346 /* KlaviyoAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KlaviyoAPI.swift; path = Sources/KlaviyoSwift/KlaviyoAPI.swift; sourceTree = "<group>"; };
+		6B441A76933A935DD04B0DDB7CA5F638 /* KlaviyoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KlaviyoSwift.debug.xcconfig; sourceTree = "<group>"; };
+		6BE06D1E365DA1C1F7F345B386E068A1 /* AnyCodable-FlightSchool */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "AnyCodable-FlightSchool"; path = AnyCodable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FCE15C52D73791E1C999C33B758E269 /* klaviyo_flutter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "klaviyo_flutter-Info.plist"; sourceTree = "<group>"; };
+		71AFB4D424E0679DD1CD99E89337B3CA /* Flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.release.xcconfig; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		778D532A4AB11ADA31495D830EBC9CFA /* AnyDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyDecodable.swift; path = Sources/AnyCodable/AnyDecodable.swift; sourceTree = "<group>"; };
+		780AB510C1B7A4BA51127C4C456288A4 /* AnyCodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyCodable.swift; path = Sources/AnyCodable/AnyCodable.swift; sourceTree = "<group>"; };
+		7B3C932BD54DBB963102A89E0F9E3948 /* Pods-Runner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Runner-dummy.m"; sourceTree = "<group>"; };
+		803CF4103B2997A999AF932C7748012E /* KlaviyoFlutterPlugin.h_ */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KlaviyoFlutterPlugin.h_; path = ../../../../../../../ios/Classes/KlaviyoFlutterPlugin.h_; sourceTree = "<group>"; };
+		86D1187400200DD4F05549C2FBD163BF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../../../../../../LICENSE; sourceTree = "<group>"; };
+		9302A2DA3CB4A83597387EED8CAD9C50 /* AnyCodable-FlightSchool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AnyCodable-FlightSchool-Info.plist"; sourceTree = "<group>"; };
+		96BF45FBE2BC9AD7B2D7E56D01B5EE46 /* Pods-Runner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Runner-umbrella.h"; sourceTree = "<group>"; };
+		98203071DC69364610216AE671CE8C30 /* KlaviyoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KlaviyoSwift.release.xcconfig; sourceTree = "<group>"; };
+		9983E4CEC71A51C9AFFB9BBDACF68527 /* LoggerClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoggerClient.swift; path = Sources/KlaviyoSwift/LoggerClient.swift; sourceTree = "<group>"; };
+		9A75EA52E5DB3003B0E9440014554161 /* klaviyo_flutter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = klaviyo_flutter.podspec; path = ../../../../../../ios/klaviyo_flutter.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		9B8362A931FF66EFF5F376996E698230 /* KlaviyoSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KlaviyoSwift; path = KlaviyoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F79F8269DC34AC56BB3D1D9652C0D86 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
+		A005F353F4C22F45AF3CE695A9AE2685 /* Cancellation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cancellation.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/Cancellation.swift; sourceTree = "<group>"; };
+		A3388A7250F1C4C481AD82F8B647D459 /* AnyEncodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyEncodable.swift; path = Sources/AnyCodable/AnyEncodable.swift; sourceTree = "<group>"; };
+		A6B5EE2A891C551CDF6DD489468ED262 /* KlaviyoSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KlaviyoSwift.modulemap; sourceTree = "<group>"; };
+		A713E4484962F3917E5E7FB199049C17 /* NetworkSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkSession.swift; path = Sources/KlaviyoSwift/NetworkSession.swift; sourceTree = "<group>"; };
+		B52480045CF169658BD3A08740F73149 /* AnyCodable-FlightSchool-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnyCodable-FlightSchool-umbrella.h"; sourceTree = "<group>"; };
+		BC89B604277E742F8072A6E97378A30C /* SDKRequestIterator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SDKRequestIterator.swift; path = Sources/KlaviyoSwift/SDKRequestIterator.swift; sourceTree = "<group>"; };
+		C6C9889ACD0567EE5EC35C4AA2EF8521 /* KlaviyoEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KlaviyoEnvironment.swift; path = Sources/KlaviyoSwift/KlaviyoEnvironment.swift; sourceTree = "<group>"; };
+		C6EA98402A94995D022D330B64B5203D /* Pods-Runner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Runner-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CDAECCF4B5E08124ED410F09FD5A5DF9 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		D2FA70CA298C392CB8332ADEEDD1CE85 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
+		D30DFDD5FE6AB1F5C8D2376E7FBA1C1E /* KlaviyoState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KlaviyoState.swift; path = Sources/KlaviyoSwift/KlaviyoState.swift; sourceTree = "<group>"; };
+		D44538C9850A4F552FE1D4FF65CC24D4 /* AnyCodable-FlightSchool-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AnyCodable-FlightSchool-prefix.pch"; sourceTree = "<group>"; };
+		D5904C7C5F2093508F6A24084FFB3C43 /* InternalAPIModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InternalAPIModels.swift; path = Sources/KlaviyoSwift/InternalAPIModels.swift; sourceTree = "<group>"; };
+		D7DF052E9B74766121CC0BD17D05B545 /* Flutter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Flutter.debug.xcconfig; sourceTree = "<group>"; };
+		D82D376126DF1552EBAC41D83CB03D4D /* AnyCodable-FlightSchool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AnyCodable-FlightSchool-dummy.m"; sourceTree = "<group>"; };
+		D9F2B4CB813B4BDC4D164C6E0868930A /* Pods-Runner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Runner-acknowledgements.plist"; sourceTree = "<group>"; };
+		DAB5539B6BA39758E30507569A642A12 /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Create.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/Create.swift; sourceTree = "<group>"; };
+		E9FDCCCE8DBE75E4766DEF9E3DD76D67 /* KlaviyoSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KlaviyoSwift-dummy.m"; sourceTree = "<group>"; };
+		EDF91E2C16D6D0B6994C4AD144112081 /* KlaviyoFlutterPlugin.m_ */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KlaviyoFlutterPlugin.m_; path = ../../../../../../../ios/Classes/KlaviyoFlutterPlugin.m_; sourceTree = "<group>"; };
+		F49C32B3B8CF59AB437BFD7314674868 /* Pods-Runner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Runner.modulemap"; sourceTree = "<group>"; };
+		F5D958D71E413F19A4F8AF99A3F7E994 /* ReducerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReducerProtocol.swift; path = Sources/KlaviyoSwift/Vendor/ComposableArchitecture/ReducerProtocol.swift; sourceTree = "<group>"; };
+		F9D9A8DD866CD5A174578EBB1C6DB843 /* klaviyo_flutter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = klaviyo_flutter.release.xcconfig; sourceTree = "<group>"; };
+		FB46B206839D74702DFDF8F7A4BFAC6C /* KlaviyoSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KlaviyoSwift-Info.plist"; sourceTree = "<group>"; };
+		FBBBD9673BE4DA9897A348E27B442DE7 /* Klaviyo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Klaviyo.swift; path = Sources/KlaviyoSwift/Klaviyo.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44422BB28225B78CC171CD27E2FFD682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C14F8D9FCD91636099BAA1667CEA07 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4366CDB4A7E41AD79015CC2A307C6AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39A22ED6301FC726619EE2B65609AEF5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB055F5C20EB43BF0096D8CB5981A315 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0FEB8D2D38D98FE466371C7AD42CA20 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD706A6132038D07AF1943EF2E112CE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8C685B4728B13F4F9AA86A05B7B4630 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09EF8A41A7EC49F3EA43D73EA44929F7 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				12D908BDBA6A21FFDCA212500EE5B873 /* Flutter.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		183178F5599FE312A7FF80C31BD2D722 /* AnyCodable-FlightSchool */ = {
+			isa = PBXGroup;
+			children = (
+				780AB510C1B7A4BA51127C4C456288A4 /* AnyCodable.swift */,
+				778D532A4AB11ADA31495D830EBC9CFA /* AnyDecodable.swift */,
+				A3388A7250F1C4C481AD82F8B647D459 /* AnyEncodable.swift */,
+				7D8890186D7E654659C8DBAEDBB92552 /* Support Files */,
+			);
+			path = "AnyCodable-FlightSchool";
+			sourceTree = "<group>";
+		};
+		1BCF7BA395C6648AEDA2D8808CAB4B3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BE06D1E365DA1C1F7F345B386E068A1 /* AnyCodable-FlightSchool */,
+				25D8D82C10FD2A8104F1C1AF9598F363 /* klaviyo_flutter */,
+				9B8362A931FF66EFF5F376996E698230 /* KlaviyoSwift */,
+				669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1DCA5438578B488472477D9783CB626E /* example */ = {
+			isa = PBXGroup;
+			children = (
+				B4315E9C4F4FA4405D0259CC20FCCDC6 /* ios */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		1F5DC5EF02619D544BC1B49875BBF865 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				183178F5599FE312A7FF80C31BD2D722 /* AnyCodable-FlightSchool */,
+				D112BAD8BFDD642C44471FB9817F3F85 /* KlaviyoSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2DC3EB01E33BA09BFD7099C94A2DBEC1 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				5D22D8D7379249C36B0976FAB36C4ECD /* klaviyo_flutter */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		38E27051F58CF5A1BEA2C62669542224 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				261BC68FC1408FDE9F058FFDA0DF2E0E /* klaviyo_flutter.modulemap */,
+				39F66433FC85787369AAF737B50CF6C9 /* klaviyo_flutter-dummy.m */,
+				6FCE15C52D73791E1C999C33B758E269 /* klaviyo_flutter-Info.plist */,
+				300F9C256EB1129B2F15BCB7FFE245BE /* klaviyo_flutter-prefix.pch */,
+				0D5BC199CDC3AE39E6EA47601639F582 /* klaviyo_flutter-umbrella.h */,
+				022C873B3E75F61BA6C280CED7BDC445 /* klaviyo_flutter.debug.xcconfig */,
+				F9D9A8DD866CD5A174578EBB1C6DB843 /* klaviyo_flutter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../../../../Pods/Target Support Files/klaviyo_flutter";
+			sourceTree = "<group>";
+		};
+		39DB2C88342D9E79D6F4AF9FEC365371 /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				1DCA5438578B488472477D9783CB626E /* example */,
+			);
+			path = ..;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5D22D8D7379249C36B0976FAB36C4ECD /* klaviyo_flutter */ = {
+			isa = PBXGroup;
+			children = (
+				D7DEF95B2C559BE8125BD5CDE2C0231B /* ios */,
+			);
+			path = klaviyo_flutter;
+			sourceTree = "<group>";
+		};
+		70B7DF44E2619EDB66D77C0E4CD898EF /* .. */ = {
+			isa = PBXGroup;
+			children = (
+				39DB2C88342D9E79D6F4AF9FEC365371 /* .. */,
+			);
+			name = ..;
+			path = ../../../../../../ios;
+			sourceTree = "<group>";
+		};
+		791C6E4B424AF06279F8918FA67B8ED6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B0D67477903E1EB8D6A9F9AF51BC5CC /* Pods-Runner */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7B0D67477903E1EB8D6A9F9AF51BC5CC /* Pods-Runner */ = {
+			isa = PBXGroup;
+			children = (
+				F49C32B3B8CF59AB437BFD7314674868 /* Pods-Runner.modulemap */,
+				C6EA98402A94995D022D330B64B5203D /* Pods-Runner-acknowledgements.markdown */,
+				D9F2B4CB813B4BDC4D164C6E0868930A /* Pods-Runner-acknowledgements.plist */,
+				7B3C932BD54DBB963102A89E0F9E3948 /* Pods-Runner-dummy.m */,
+				317C26B9A7CEDD34ADE8F37FAAB7AC20 /* Pods-Runner-frameworks.sh */,
+				51825CD8F0558EFA53D9510F0E5BFA16 /* Pods-Runner-Info.plist */,
+				96BF45FBE2BC9AD7B2D7E56D01B5EE46 /* Pods-Runner-umbrella.h */,
+				CDAECCF4B5E08124ED410F09FD5A5DF9 /* Pods-Runner.debug.xcconfig */,
+				9F79F8269DC34AC56BB3D1D9652C0D86 /* Pods-Runner.profile.xcconfig */,
+				D2FA70CA298C392CB8332ADEEDD1CE85 /* Pods-Runner.release.xcconfig */,
+			);
+			name = "Pods-Runner";
+			path = "Target Support Files/Pods-Runner";
+			sourceTree = "<group>";
+		};
+		7D8890186D7E654659C8DBAEDBB92552 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				673899F465EF2DFFA8DCAAB92CAB62D4 /* AnyCodable-FlightSchool.modulemap */,
+				D82D376126DF1552EBAC41D83CB03D4D /* AnyCodable-FlightSchool-dummy.m */,
+				9302A2DA3CB4A83597387EED8CAD9C50 /* AnyCodable-FlightSchool-Info.plist */,
+				D44538C9850A4F552FE1D4FF65CC24D4 /* AnyCodable-FlightSchool-prefix.pch */,
+				B52480045CF169658BD3A08740F73149 /* AnyCodable-FlightSchool-umbrella.h */,
+				0E606CA876ECD65DD61CEE9F3FC01D30 /* AnyCodable-FlightSchool.debug.xcconfig */,
+				50D281CFCB9C793321DE7DA1FCB31CE4 /* AnyCodable-FlightSchool.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AnyCodable-FlightSchool";
+			sourceTree = "<group>";
+		};
+		8A1B067E28AB3EDD4BEBD8794B22892F /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				09EF8A41A7EC49F3EA43D73EA44929F7 /* Pod */,
+				95CB7D9F610AB23F1A48AF56CACFF8A4 /* Support Files */,
+			);
+			name = Flutter;
+			path = ../Flutter;
+			sourceTree = "<group>";
+		};
+		9520CA4B9049DC8328294A5364CFC1FF /* klaviyo_flutter */ = {
+			isa = PBXGroup;
+			children = (
+				70B7DF44E2619EDB66D77C0E4CD898EF /* .. */,
+				AEEFE62A47D6CD05091ACAA32190DD0D /* Pod */,
+				38E27051F58CF5A1BEA2C62669542224 /* Support Files */,
+			);
+			name = klaviyo_flutter;
+			path = ../.symlinks/plugins/klaviyo_flutter/ios;
+			sourceTree = "<group>";
+		};
+		95CB7D9F610AB23F1A48AF56CACFF8A4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7DF052E9B74766121CC0BD17D05B545 /* Flutter.debug.xcconfig */,
+				71AFB4D424E0679DD1CD99E89337B3CA /* Flutter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Pods/Target Support Files/Flutter";
+			sourceTree = "<group>";
+		};
+		AEEFE62A47D6CD05091ACAA32190DD0D /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				9A75EA52E5DB3003B0E9440014554161 /* klaviyo_flutter.podspec */,
+				86D1187400200DD4F05549C2FBD163BF /* LICENSE */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		B4315E9C4F4FA4405D0259CC20FCCDC6 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				D935ECEA1FBE9F2A990E74A9FC33F32D /* .symlinks */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		B8B859CD4EAA998CFE4B3F5F3101C707 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6B5EE2A891C551CDF6DD489468ED262 /* KlaviyoSwift.modulemap */,
+				E9FDCCCE8DBE75E4766DEF9E3DD76D67 /* KlaviyoSwift-dummy.m */,
+				FB46B206839D74702DFDF8F7A4BFAC6C /* KlaviyoSwift-Info.plist */,
+				52AF96361134921F4261492B45972F95 /* KlaviyoSwift-prefix.pch */,
+				0F8E268C4E5825CDF81F70236DA94A6E /* KlaviyoSwift-umbrella.h */,
+				6B441A76933A935DD04B0DDB7CA5F638 /* KlaviyoSwift.debug.xcconfig */,
+				98203071DC69364610216AE671CE8C30 /* KlaviyoSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KlaviyoSwift";
+			sourceTree = "<group>";
+		};
+		C96E4FA5330748690E7E0CE849DEEAF7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				803CF4103B2997A999AF932C7748012E /* KlaviyoFlutterPlugin.h_ */,
+				EDF91E2C16D6D0B6994C4AD144112081 /* KlaviyoFlutterPlugin.m_ */,
+				11B942F24E1399CB8553C778443548CC /* KlaviyoFlutterPlugin.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D1F3917C8D3FA3BBFED8320068CF97B2 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				1F5DC5EF02619D544BC1B49875BBF865 /* Pods */,
+				1BCF7BA395C6648AEDA2D8808CAB4B3D /* Products */,
+				791C6E4B424AF06279F8918FA67B8ED6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D112BAD8BFDD642C44471FB9817F3F85 /* KlaviyoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				59E226D00F62DE14EED1DA0F61B882AD /* APIRequestErrorHandling.swift */,
+				0BADE763D16D10AC8DA3C1F34AA380B8 /* AppContextInfo.swift */,
+				64D25B912C049CEEBB832A28DB566E73 /* AppLifeCycleEvents.swift */,
+				320A573FB3269545A9D043829F232AB3 /* ArchivalUtils.swift */,
+				A005F353F4C22F45AF3CE695A9AE2685 /* Cancellation.swift */,
+				1DE884C5E3F7D313EF69A065AD26AA52 /* ConcurrencySupport.swift */,
+				DAB5539B6BA39758E30507569A642A12 /* Create.swift */,
+				43AD90D2F69507A7C036450ADB76A228 /* Effect.swift */,
+				17328A863854EF2CBE23F7C2C7793077 /* FileUtils.swift */,
+				D5904C7C5F2093508F6A24084FFB3C43 /* InternalAPIModels.swift */,
+				FBBBD9673BE4DA9897A348E27B442DE7 /* Klaviyo.swift */,
+				6964B805B9F664514C675D8E9F624346 /* KlaviyoAPI.swift */,
+				C6C9889ACD0567EE5EC35C4AA2EF8521 /* KlaviyoEnvironment.swift */,
+				631E14C39F8CE11438E08D967ED46167 /* KlaviyoModels.swift */,
+				D30DFDD5FE6AB1F5C8D2376E7FBA1C1E /* KlaviyoState.swift */,
+				9983E4CEC71A51C9AFFB9BBDACF68527 /* LoggerClient.swift */,
+				54FEF096606FD3D99D6CC9DBA2586257 /* Misc.swift */,
+				A713E4484962F3917E5E7FB199049C17 /* NetworkSession.swift */,
+				0E6DFFBDF592A4A18CF2DADD8FD53E67 /* Publisher.swift */,
+				1FDDB9DD64724E24C1013ACE09C2CBDB /* ReachabilitySwift.swift */,
+				F5D958D71E413F19A4F8AF99A3F7E994 /* ReducerProtocol.swift */,
+				BC89B604277E742F8072A6E97378A30C /* SDKRequestIterator.swift */,
+				24E0C49F9EBFEECFF0B93709D703E3D8 /* StateChangePublisher.swift */,
+				5FF91A04FC3C00FC3154B73FD4FCCE8E /* StateManagement.swift */,
+				67E34B23B45B7580C1EC9B60264919C8 /* Store.swift */,
+				5FF7688535CB61B7D977D00CAE16A0A2 /* Version.swift */,
+				B8B859CD4EAA998CFE4B3F5F3101C707 /* Support Files */,
+			);
+			path = KlaviyoSwift;
+			sourceTree = "<group>";
+		};
+		D1F3917C8D3FA3BBFED8320068CF97B2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B067E28AB3EDD4BEBD8794B22892F /* Flutter */,
+				9520CA4B9049DC8328294A5364CFC1FF /* klaviyo_flutter */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7DEF95B2C559BE8125BD5CDE2C0231B /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				C96E4FA5330748690E7E0CE849DEEAF7 /* Classes */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		D935ECEA1FBE9F2A990E74A9FC33F32D /* .symlinks */ = {
+			isa = PBXGroup;
+			children = (
+				2DC3EB01E33BA09BFD7099C94A2DBEC1 /* plugins */,
+			);
+			path = .symlinks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		58B8567365C84BBCE91C74510DF2164A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAB7B9C9B95583201DB5A69233EDD30B /* AnyCodable-FlightSchool-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C04A055B9784CF24BBCFAE872E82CFF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC961521AA72E4D8E89A6650F1F3FDA /* Pods-Runner-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A17872DBBCD7FB176E74858083F155D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05F1ACE4A133FEA7218D6E831ACF306 /* klaviyo_flutter-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4138C2ACF5FE03C466C80AD2B8A8B69 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F9FCC925F0236FCD878EF3C76155389 /* KlaviyoSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		393E4D1E9667AFD1C6B61ED719FABDC4 /* klaviyo_flutter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CA23407E900EAEAB49348CEF8697966 /* Build configuration list for PBXNativeTarget "klaviyo_flutter" */;
+			buildPhases = (
+				A17872DBBCD7FB176E74858083F155D9 /* Headers */,
+				4180FC0527B5CC868481499691809808 /* Sources */,
+				FD706A6132038D07AF1943EF2E112CE5 /* Frameworks */,
+				B523BEC4E00FEAB138F202E615B1C694 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3ACAE0C5B1F6F85980B7712693FB325 /* PBXTargetDependency */,
+				0AC3097740F1D3CC81E1D54788E65680 /* PBXTargetDependency */,
+			);
+			name = klaviyo_flutter;
+			productName = klaviyo_flutter;
+			productReference = 25D8D82C10FD2A8104F1C1AF9598F363 /* klaviyo_flutter */;
+			productType = "com.apple.product-type.framework";
+		};
+		61518D6062CE8F2EDA7A3BDAEDE9CA44 /* KlaviyoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2C142DEE3A782011C8BC07D9C9CE2A9 /* Build configuration list for PBXNativeTarget "KlaviyoSwift" */;
+			buildPhases = (
+				A4138C2ACF5FE03C466C80AD2B8A8B69 /* Headers */,
+				1A9C96CEFBB65E457AB3B61CE5C2C420 /* Sources */,
+				EB055F5C20EB43BF0096D8CB5981A315 /* Frameworks */,
+				509CC1D79A14DFFF5440EECEECA3D4EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B9128CF9A6F451844F10FE6E600816B /* PBXTargetDependency */,
+			);
+			name = KlaviyoSwift;
+			productName = KlaviyoSwift;
+			productReference = 9B8362A931FF66EFF5F376996E698230 /* KlaviyoSwift */;
+			productType = "com.apple.product-type.framework";
+		};
+		6B1349DEE8C0A3A2839E9C9A03465ED9 /* AnyCodable-FlightSchool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BECD23F64C057AD372913FB18CD51660 /* Build configuration list for PBXNativeTarget "AnyCodable-FlightSchool" */;
+			buildPhases = (
+				58B8567365C84BBCE91C74510DF2164A /* Headers */,
+				C0BA070819156607902E82466B32E128 /* Sources */,
+				44422BB28225B78CC171CD27E2FFD682 /* Frameworks */,
+				DFC47108A7C2B69C6B51AE7B23A712FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AnyCodable-FlightSchool";
+			productName = AnyCodable;
+			productReference = 6BE06D1E365DA1C1F7F345B386E068A1 /* AnyCodable-FlightSchool */;
+			productType = "com.apple.product-type.framework";
+		};
+		8B74B458B450D74B75744B87BD747314 /* Pods-Runner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 530BB5432A3D02DB04DB8F17B4AB945E /* Build configuration list for PBXNativeTarget "Pods-Runner" */;
+			buildPhases = (
+				5C04A055B9784CF24BBCFAE872E82CFF /* Headers */,
+				23C0F96554AA44F68AC2879920B3AC93 /* Sources */,
+				A4366CDB4A7E41AD79015CC2A307C6AC /* Frameworks */,
+				98FF342DCD8B17F170FF0A449FAC8F3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E1F5A7670074BB807A7126071392AE3 /* PBXTargetDependency */,
+				05932801182B4E43AF87A58158AC64C6 /* PBXTargetDependency */,
+				A4ADD41DF58F55D24E329E5DC75D22B1 /* PBXTargetDependency */,
+				B3A75DCC1EF78688BF1500EC117DAFAB /* PBXTargetDependency */,
+			);
+			name = "Pods-Runner";
+			productName = Pods_Runner;
+			productReference = 669E8F25E1897672BDB80B7EB784DA24 /* Pods-Runner */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 1BCF7BA395C6648AEDA2D8808CAB4B3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B1349DEE8C0A3A2839E9C9A03465ED9 /* AnyCodable-FlightSchool */,
+				1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */,
+				393E4D1E9667AFD1C6B61ED719FABDC4 /* klaviyo_flutter */,
+				61518D6062CE8F2EDA7A3BDAEDE9CA44 /* KlaviyoSwift */,
+				8B74B458B450D74B75744B87BD747314 /* Pods-Runner */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		509CC1D79A14DFFF5440EECEECA3D4EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98FF342DCD8B17F170FF0A449FAC8F3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B523BEC4E00FEAB138F202E615B1C694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFC47108A7C2B69C6B51AE7B23A712FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A9C96CEFBB65E457AB3B61CE5C2C420 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4477B055F1AA93BC20C469DF786F8E35 /* APIRequestErrorHandling.swift in Sources */,
+				A9F8DB4AD1D0D525ED85BDC767945916 /* AppContextInfo.swift in Sources */,
+				871D19313BECAC904DDF62D93BCD09AD /* AppLifeCycleEvents.swift in Sources */,
+				FFC717CA0032198CC2AE182BD018DDA9 /* ArchivalUtils.swift in Sources */,
+				3AB48DCC22F76C0489C10A56B1633053 /* Cancellation.swift in Sources */,
+				C6DBF66EAB62294C4F4368E392E1A491 /* ConcurrencySupport.swift in Sources */,
+				E173E0B0F73E08526A8191BE63DCF24E /* Create.swift in Sources */,
+				BF651F61244E203EE07AD670B7B2E7A7 /* Effect.swift in Sources */,
+				0E65ED9B78D79851CE0584E73478329B /* FileUtils.swift in Sources */,
+				A882D7CC02B4EE288A7210F1760DD06C /* InternalAPIModels.swift in Sources */,
+				600536ECBF749E405013F6E609B91A0F /* Klaviyo.swift in Sources */,
+				22318931C5E1DF059C69FC79775EFB16 /* KlaviyoAPI.swift in Sources */,
+				528A8B03522253CAFC8784045E81AD26 /* KlaviyoEnvironment.swift in Sources */,
+				1F35FA2E5C86C7EC4017BC2EA0FD6AD4 /* KlaviyoModels.swift in Sources */,
+				1D4C9C6E64837BC2E6593512C2DB0791 /* KlaviyoState.swift in Sources */,
+				D7E73E1EFD8A345B156CF2BB9F8F6F9B /* KlaviyoSwift-dummy.m in Sources */,
+				F4A864B300E668FB358B6E2398CF1454 /* LoggerClient.swift in Sources */,
+				03463F2450CA6B76ACBEC7DAE6FBE37F /* Misc.swift in Sources */,
+				F51B38B75526C5F2366D70A5E37F961D /* NetworkSession.swift in Sources */,
+				F2FD6B61E6AD46269CD8692723C67348 /* Publisher.swift in Sources */,
+				F1E4DC7B3911A8A6B8466EF674AA4283 /* ReachabilitySwift.swift in Sources */,
+				B0C6ABCED2CCF828A48A8D4D0FEAED84 /* ReducerProtocol.swift in Sources */,
+				700A0FE79C29E42EB6F21997D03B28C5 /* SDKRequestIterator.swift in Sources */,
+				3C0955CA89770304328B10F32AE54B93 /* StateChangePublisher.swift in Sources */,
+				55822B0B68C340EE949B79D94D3478C5 /* StateManagement.swift in Sources */,
+				2253AFB4978726994D6040F722F6E947 /* Store.swift in Sources */,
+				9DB700C304F711711911428A1D42CA3E /* Version.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23C0F96554AA44F68AC2879920B3AC93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E0CB9E36DB4DADC4723D52B64BEA892 /* Pods-Runner-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4180FC0527B5CC868481499691809808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A67BB3E284F0ADFAF49C251D395BAF5 /* klaviyo_flutter-dummy.m in Sources */,
+				1EB20974EDD2C125BF209D36282C6B75 /* KlaviyoFlutterPlugin.h_ in Sources */,
+				C7EEE8A0B7696029B3E5E3C5DF6F138A /* KlaviyoFlutterPlugin.m_ in Sources */,
+				EB9FC6BB45C075B1B301115257663A0B /* KlaviyoFlutterPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0BA070819156607902E82466B32E128 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0F9081F54422882D0238712F014DE3 /* AnyCodable.swift in Sources */,
+				850D93A027F7D7DB0E8EAA3681FCEA27 /* AnyCodable-FlightSchool-dummy.m in Sources */,
+				07B1FB6E10E9E8ED7A7DC5048F43F83D /* AnyDecodable.swift in Sources */,
+				3AB40FCA5007240AB8082BF6EDC229FF /* AnyEncodable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05932801182B4E43AF87A58158AC64C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Flutter;
+			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
+			targetProxy = 514334176CB924D4BEDE008A2AF21254 /* PBXContainerItemProxy */;
+		};
+		0AC3097740F1D3CC81E1D54788E65680 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KlaviyoSwift;
+			target = 61518D6062CE8F2EDA7A3BDAEDE9CA44 /* KlaviyoSwift */;
+			targetProxy = D3BEEAA601A0DE3CAC90D9ED922D2C96 /* PBXContainerItemProxy */;
+		};
+		7B9128CF9A6F451844F10FE6E600816B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AnyCodable-FlightSchool";
+			target = 6B1349DEE8C0A3A2839E9C9A03465ED9 /* AnyCodable-FlightSchool */;
+			targetProxy = CEA4CAD18314B86E56B50FECDC75E6C6 /* PBXContainerItemProxy */;
+		};
+		8E1F5A7670074BB807A7126071392AE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AnyCodable-FlightSchool";
+			target = 6B1349DEE8C0A3A2839E9C9A03465ED9 /* AnyCodable-FlightSchool */;
+			targetProxy = ADC7C47AE4CE3D7B471738C69BFAD9ED /* PBXContainerItemProxy */;
+		};
+		A4ADD41DF58F55D24E329E5DC75D22B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KlaviyoSwift;
+			target = 61518D6062CE8F2EDA7A3BDAEDE9CA44 /* KlaviyoSwift */;
+			targetProxy = E7DD755631D667A459CFE20A3458FB9F /* PBXContainerItemProxy */;
+		};
+		B3A75DCC1EF78688BF1500EC117DAFAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = klaviyo_flutter;
+			target = 393E4D1E9667AFD1C6B61ED719FABDC4 /* klaviyo_flutter */;
+			targetProxy = CFBBA55CE58F12610399CBD23E3EB548 /* PBXContainerItemProxy */;
+		};
+		B3ACAE0C5B1F6F85980B7712693FB325 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Flutter;
+			target = 1EFDDC32A34D56D411E640A81DCD9E73 /* Flutter */;
+			targetProxy = FED422C6C08DE73254C1DE4105CEA22E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DAA2B1C2502DF8A94E50A2E5E0475EC /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98203071DC69364610216AE671CE8C30 /* KlaviyoSwift.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KlaviyoSwift/KlaviyoSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KlaviyoSwift/KlaviyoSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KlaviyoSwift/KlaviyoSwift.modulemap";
+				PRODUCT_MODULE_NAME = KlaviyoSwift;
+				PRODUCT_NAME = KlaviyoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.7;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Profile;
+		};
+		123B0D65A35211FC43B8BEE770443D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71AFB4D424E0679DD1CD99E89337B3CA /* Flutter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25CEBFF15EEC15D225C88AC9539CAD02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B441A76933A935DD04B0DDB7CA5F638 /* KlaviyoSwift.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KlaviyoSwift/KlaviyoSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KlaviyoSwift/KlaviyoSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KlaviyoSwift/KlaviyoSwift.modulemap";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_MODULE_NAME = KlaviyoSwift;
+				PRODUCT_NAME = KlaviyoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.7;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		401A5A80A2DF65D2621C002F9221196D /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F79F8269DC34AC56BB3D1D9652C0D86 /* Pods-Runner.profile.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Runner/Pods-Runner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Runner/Pods-Runner.modulemap";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Profile;
+		};
+		503C1EFFF98ABB8F379FAECB16E0AEE5 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_PROFILE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Profile;
+		};
+		792F5615F056A77DE997519F32A8C850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2FA70CA298C392CB8332ADEEDD1CE85 /* Pods-Runner.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Runner/Pods-Runner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Runner/Pods-Runner.modulemap";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8C7645A4468DBD27964E27FB15CAE7CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50D281CFCB9C793321DE7DA1FCB31CE4 /* AnyCodable-FlightSchool.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool.modulemap";
+				PRODUCT_MODULE_NAME = AnyCodable;
+				PRODUCT_NAME = AnyCodable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		8E595C6B64475F4EFC447062BC06917B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98203071DC69364610216AE671CE8C30 /* KlaviyoSwift.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KlaviyoSwift/KlaviyoSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KlaviyoSwift/KlaviyoSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KlaviyoSwift/KlaviyoSwift.modulemap";
+				PRODUCT_MODULE_NAME = KlaviyoSwift;
+				PRODUCT_NAME = KlaviyoSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.7;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9498D2532E60DBDF41603C51B60E35E8 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71AFB4D424E0679DD1CD99E89337B3CA /* Flutter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Profile;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A045C7A6D99F4F60840B1F19D32848E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7DF052E9B74766121CC0BD17D05B545 /* Flutter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A8F218426C574F917A796A348C0FCA37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9D9A8DD866CD5A174578EBB1C6DB843 /* klaviyo_flutter.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				GCC_PREFIX_HEADER = "Target Support Files/klaviyo_flutter/klaviyo_flutter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/klaviyo_flutter/klaviyo_flutter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/klaviyo_flutter/klaviyo_flutter.modulemap";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				PRODUCT_MODULE_NAME = klaviyo_flutter;
+				PRODUCT_NAME = klaviyo_flutter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B46AB54B6CF3BE474AE96173C792BC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDAECCF4B5E08124ED410F09FD5A5DF9 /* Pods-Runner.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Target Support Files/Pods-Runner/Pods-Runner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Runner/Pods-Runner.modulemap";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B522C2C1C4D9FCB244EB03D8E853908E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 022C873B3E75F61BA6C280CED7BDC445 /* klaviyo_flutter.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				GCC_PREFIX_HEADER = "Target Support Files/klaviyo_flutter/klaviyo_flutter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/klaviyo_flutter/klaviyo_flutter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/klaviyo_flutter/klaviyo_flutter.modulemap";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				PRODUCT_MODULE_NAME = klaviyo_flutter;
+				PRODUCT_NAME = klaviyo_flutter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D1C9EA2D72110A8455BE5D5A7953EFD4 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9D9A8DD866CD5A174578EBB1C6DB843 /* klaviyo_flutter.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "$(inherited) armv7";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "$(inherited) i386";
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64\"",
+					"$(inherited)",
+				);
+				"FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]" = (
+					"\"/Users/denis.rybnikov/flutter/bin/cache/artifacts/engine/ios-release/Flutter.xcframework/ios-arm64_x86_64-simulator\"",
+					"$(inherited)",
+				);
+				GCC_PREFIX_HEADER = "Target Support Files/klaviyo_flutter/klaviyo_flutter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/klaviyo_flutter/klaviyo_flutter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/klaviyo_flutter/klaviyo_flutter.modulemap";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					Flutter,
+				);
+				PRODUCT_MODULE_NAME = klaviyo_flutter;
+				PRODUCT_NAME = klaviyo_flutter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				"VALID_ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Profile;
+		};
+		D4A4328C9A9268B7F8EAA0E3A90C5FE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E606CA876ECD65DD61CEE9F3FC01D30 /* AnyCodable-FlightSchool.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool.modulemap";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_MODULE_NAME = AnyCodable;
+				PRODUCT_NAME = AnyCodable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E1A5DDF6EA7C1A8A89E6CFA0BD018795 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50D281CFCB9C793321DE7DA1FCB31CE4 /* AnyCodable-FlightSchool.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/AnyCodable-FlightSchool/AnyCodable-FlightSchool.modulemap";
+				PRODUCT_MODULE_NAME = AnyCodable;
+				PRODUCT_NAME = AnyCodable;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Profile;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CA23407E900EAEAB49348CEF8697966 /* Build configuration list for PBXNativeTarget "klaviyo_flutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B522C2C1C4D9FCB244EB03D8E853908E /* Debug */,
+				D1C9EA2D72110A8455BE5D5A7953EFD4 /* Profile */,
+				A8F218426C574F917A796A348C0FCA37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				503C1EFFF98ABB8F379FAECB16E0AEE5 /* Profile */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		530BB5432A3D02DB04DB8F17B4AB945E /* Build configuration list for PBXNativeTarget "Pods-Runner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B46AB54B6CF3BE474AE96173C792BC84 /* Debug */,
+				401A5A80A2DF65D2621C002F9221196D /* Profile */,
+				792F5615F056A77DE997519F32A8C850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94078A06C17E946ADC1F2C06726219E5 /* Build configuration list for PBXAggregateTarget "Flutter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A045C7A6D99F4F60840B1F19D32848E6 /* Debug */,
+				9498D2532E60DBDF41603C51B60E35E8 /* Profile */,
+				123B0D65A35211FC43B8BEE770443D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2C142DEE3A782011C8BC07D9C9CE2A9 /* Build configuration list for PBXNativeTarget "KlaviyoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25CEBFF15EEC15D225C88AC9539CAD02 /* Debug */,
+				0DAA2B1C2502DF8A94E50A2E5E0475EC /* Profile */,
+				8E595C6B64475F4EFC447062BC06917B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BECD23F64C057AD372913FB18CD51660 /* Build configuration list for PBXNativeTarget "AnyCodable-FlightSchool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4A4328C9A9268B7F8EAA0E3A90C5FE5 /* Debug */,
+				E1A5DDF6EA7C1A8A89E6CFA0BD018795 /* Profile */,
+				8C7645A4468DBD27964E27FB15CAE7CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

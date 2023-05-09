@@ -1,0 +1,30 @@
+name: klaviyo_flutter
+description: Flutter plugin for Klaviyo integration. Provides push messaging
+  and Klaviyo analitics services
+version: 0.0.1
+#homepage: https://github.com/drybnikov/klaviyo_flutter
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.4
+  equatable: ^2.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.rightbite.denisr
+        pluginClass: KlaviyoFlutterPlugin
+      ios:
+        pluginClass: KlaviyoFlutterPlugin

@@ -1,0 +1,33 @@
+PODS:
+  - AnyCodable-FlightSchool (0.6.7)
+  - Flutter (1.0.0)
+  - klaviyo_flutter (0.0.1):
+    - Flutter
+    - KlaviyoSwift
+  - KlaviyoSwift (2.0.1):
+    - AnyCodable-FlightSchool
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - klaviyo_flutter (from `.symlinks/plugins/klaviyo_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AnyCodable-FlightSchool
+    - KlaviyoSwift
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  klaviyo_flutter:
+    :path: ".symlinks/plugins/klaviyo_flutter/ios"
+
+SPEC CHECKSUMS:
+  AnyCodable-FlightSchool: 261cbe76757802b17d471b9059b21e6fa5edf57b
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  klaviyo_flutter: bf66ca424d20180fcb014c5cfac2b4f0ba167a25
+  KlaviyoSwift: 340a348b9ff64d10b66ee7752bcb191f23365d94
+
+PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
+
+COCOAPODS: 1.12.1

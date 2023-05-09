@@ -1,0 +1,30 @@
+{
+  "name": "klaviyo_flutter",
+  "version": "0.0.1",
+  "summary": "Klaviyo integration for Flutter",
+  "description": "A new flutter plugin project.",
+  "homepage": "https://github.com/ChangeFinance/klaviyo_flutter",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Denis r": "denis.rybnikov@kitopi.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "dependencies": {
+    "Flutter": [
+
+    ],
+    "KlaviyoSwift": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

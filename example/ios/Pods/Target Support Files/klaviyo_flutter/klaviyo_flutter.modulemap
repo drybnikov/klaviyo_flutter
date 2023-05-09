@@ -1,0 +1,6 @@
+framework module klaviyo_flutter {
+  umbrella header "klaviyo_flutter-umbrella.h"
+
+  export *
+  module * { export * }
+}

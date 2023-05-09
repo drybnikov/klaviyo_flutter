@@ -1,0 +1,4 @@
+BUNDLE_ID_SUFFIX=.dev
+PRODUCT_BUNDLE_IDENTIFIER=com.rightbite.klaviyoexample
+FLUTTER_TARGET=lib/main.dart
+APP_NAME=klaviyo example
