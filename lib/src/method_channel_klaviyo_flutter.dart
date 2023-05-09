@@ -43,7 +43,6 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
     log('logEvent result: $resultMap');
 
     return resultMap.toString();
-    ;
   }
 
   @override
