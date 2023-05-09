@@ -1,7 +1,7 @@
 # intercom_flutter
 
 [![Pub](https://img.shields.io/pub/v/klaviyo_flutter.svg)](https://pub.dev/packages/klaviyo_flutter)
-![CI](https://github.com/v3rm0n/klaviyo_flutter/workflows/CI/badge.svg)
+![CI](https://github.com/drybnikov/klaviyo_flutter/workflows/CI/badge.svg)
 
 Flutter wrapper for Klaviyo [Android](https://github.com/klaviyo/klaviyo-android-sdk),
 and [iOS](https://github.com/klaviyo/klaviyo-swift-sdk) projects.
@@ -58,12 +58,14 @@ documentation for more information.
 Permissions:
 
 ```xml
+
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
 Optional permissions:
 
 ```xml
+
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><uses-permission
 android:name="android.permission.VIBRATE" /><uses-permission
 android:name="android.permission.POST_NOTIFICATIONS" />
@@ -104,12 +106,16 @@ Notifications. To set this up:
   APNS token based on the platform:
 
 ```dart
+
 final firebaseMessaging = FirebaseMessaging.instance;
 final token = Platform.isIOS
-        ? await firebaseMessaging.getAPNSToken()
-        : await firebaseMessaging.getToken();
+    ? await firebaseMessaging.getAPNSToken(): await
+firebaseMessaging.getToken
+();
 
-if (token != null && token.isNotEmpty) {
+if
+(
+token != null && token.isNotEmpty) {
 Klaviyo.instance.sendTokenToKlaviyo(token);
 }
 ```
