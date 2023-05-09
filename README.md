@@ -57,14 +57,12 @@ documentation for more information.
 Permissions:
 
 ```xml
-
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
 Optional permissions:
 
 ```xml
-
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><uses-permission
 android:name="android.permission.VIBRATE" /><uses-permission
 android:name="android.permission.POST_NOTIFICATIONS" />
@@ -103,22 +101,17 @@ To specify a notification icon, add the following metadata to your app manifest.
 Absent this, the application's launcher icon will be used.
 
 ```xml
-
 <meta-data android:name="com.klaviyo.push.default_notification_icon"
     android:resource="{YOUR_ICON_RESOURCE}" />
 ```
 
 ```dart
-
 final firebaseMessaging = FirebaseMessaging.instance;
 final token = Platform.isIOS
-    ? await firebaseMessaging.getAPNSToken(): await
-firebaseMessaging.getToken
-();
+        ? await firebaseMessaging.getAPNSToken()
+        : await firebaseMessaging.getToken();
 
-if
-(
-token != null && token.isNotEmpty) {
+if (token != null && token.isNotEmpty) {
 Klaviyo.instance.sendTokenToKlaviyo(token);
 }
 ```
