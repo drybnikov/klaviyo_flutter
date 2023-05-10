@@ -9,6 +9,7 @@ var _expectCounter = 0;
 
 void setUpTestMethodChannel(String methodChannel) {
   final channel = MethodChannel(methodChannel);
+  // ignore: invalid_null_aware_operator
   final binaryMessenger =
       TestDefaultBinaryMessengerBinding.instance?.defaultBinaryMessenger;
 
