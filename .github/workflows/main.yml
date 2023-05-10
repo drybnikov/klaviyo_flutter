@@ -15,8 +15,8 @@ jobs:
   # job for plugin klaviyo_flutter
   klaviyo_flutter:
     runs-on: ubuntu-latest
-    env:
-      source-directory: ./
+    #env:
+    #  source-directory: ./
 
     steps:
       - uses: actions/checkout@v2
