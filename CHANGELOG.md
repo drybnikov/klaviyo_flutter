@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.1+1
+
+* Implemented `handlePush` on both Android and iOS
+* Updated `updateProfile` on iOS
+
 ## 0.0.1-beta
 
 * Implemented `updateProfile`, `initialize`, `sendTokenToKlaviyo`, `logEvent` on both Android and iOS
