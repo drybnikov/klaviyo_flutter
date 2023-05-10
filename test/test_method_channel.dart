@@ -6,10 +6,10 @@ final _log = <MethodCall>[];
 final _responses = <MethodCallStubbing, dynamic>{};
 
 var _expectCounter = 0;
+// ignore_for_file: invalid_null_aware_operator
 
 void setUpTestMethodChannel(String methodChannel) {
   final channel = MethodChannel(methodChannel);
-  // ignore: invalid_null_aware_operator
   final binaryMessenger =
       TestDefaultBinaryMessengerBinding.instance?.defaultBinaryMessenger;
 
