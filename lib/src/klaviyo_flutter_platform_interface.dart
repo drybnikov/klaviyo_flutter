@@ -82,4 +82,9 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
   Future<String> updateProfile(KlaviyoProfileModel profileModel) async {
     throw UnimplementedError('updateProfile() has not been implemented.');
   }
+
+  /// Check if the push [message] is for Klaviyo and handle that push.
+  Future<bool> handlePush(Map<String, dynamic> message) async {
+    throw UnimplementedError('handlePush() has not been implemented.');
+  }
 }

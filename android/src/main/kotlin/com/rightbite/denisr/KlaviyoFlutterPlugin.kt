@@ -19,6 +19,7 @@ private const val METHOD_UPDATE_PROFILE = "updateProfile"
 private const val METHOD_INITIALIZE = "initialize"
 private const val METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
 private const val METHOD_LOG_EVENT = "logEvent"
+private const val METHOD_HANDLE_PUSH = "handlePush"
 
 class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
     private var applicationContext: Context? = null
@@ -83,6 +84,26 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                     }
                     Klaviyo.createEvent(event)
                     result.success("Event[$eventName] created with metadata size: ${metaData?.size}")
+                }
+            }
+
+            METHOD_HANDLE_PUSH -> {
+                val metaData =
+                    call.argument<HashMap<String, String>>("message") ?: emptyMap<String, String>()
+                if (Klaviyo.isKlaviyoPush(metaData)) {
+                    val event = Event(
+                        EventType.OPENED_PUSH,
+                        metaData.mapKeys {
+                            EventKey.CUSTOM(it.key)
+                        }
+                    )
+
+                    Klaviyo.getPushToken()?.let { event[EventKey.PUSH_TOKEN] = it }
+
+                    Klaviyo.createEvent(event)
+                    return result.success(true)
+                } else {
+                    result.success(false)
                 }
             }
 

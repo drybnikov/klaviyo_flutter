@@ -57,4 +57,9 @@ class Klaviyo {
   Future<String> updateProfile(KlaviyoProfileModel profileModel) async {
     return KlaviyoFlutterPlatform.instance.updateProfile(profileModel);
   }
+
+  /// Check if the push [message] is for Klaviyo and handle that push.
+  Future<bool> handlePush(Map<String, dynamic> message) async {
+    return KlaviyoFlutterPlatform.instance.handlePush(message);
+  }
 }

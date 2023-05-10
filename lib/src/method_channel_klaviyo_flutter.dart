@@ -51,4 +51,16 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
     log('Start sending token to Klaviyo');
     await _channel.invokeMethod('sendTokenToKlaviyo', {'token': token});
   }
+
+  @override
+  Future<bool> handlePush(Map<String, dynamic> message) async {
+    if (!message.values.every((item) => item is String)) {
+      throw new ArgumentError(
+          'Klaviyo push messages can only have string values');
+    }
+
+    final result =
+        await _channel.invokeMethod<bool>('handlePush', {'message': message});
+    return result ?? false;
+  }
 }
