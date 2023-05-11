@@ -79,6 +79,13 @@ android.enableJetifier=true
 
 Make sure that you have a `NSPhotoLibraryUsageDescription` entry in your `Info.plist`.
 
+```Info.plist
+  <key>NSPhotoLibraryUsageDescription</key>
+```  
+```project.pbxproj 
+  IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+```
+
 ### Push notifications setup
 
 This plugin works in combination with
@@ -112,9 +119,42 @@ final token = Platform.isIOS
         : await firebaseMessaging.getToken();
 
 if (token != null && token.isNotEmpty) {
-Klaviyo.instance.sendTokenToKlaviyo(token);
+  Klaviyo.instance.sendTokenToKlaviyo(token);
 }
 ```
+### Sending push notifications
+
+1. Add the following code to the application delegate file in  `application:didRegisterForRemoteNotificationsWithDeviceToken`. You may need to add this code to your application delegate if you have not done so already.
+
+```swift
+    if #available(iOS 10.0, *) {
+        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+    }
+```
+
+Any users that enable/accept push notifications from your app now will be eligible to receive your custom notifications.
+
+To read more about sending push notifications, check out our additional push notification guides.
+* [How to set up push notifications](https://help.klaviyo.com/hc/en-us/articles/360023213971)
+* [How to send a push notification campaign](https://help.klaviyo.com/hc/en-us/articles/360006653972)
+* [How to add a push notification to a flow](https://help.klaviyo.com/hc/en-us/articles/12932504108571)
 
 Now, if either Firebase direct (e.g. by your own backend server) or Klaviyo sends you a message, it
 will be delivered to your app.
+
+### Tracking push notifications
+
+The following code example allows you to track when a user opens a push notification.
+
+1. Add the following code that extends your main app:
+
+```dart
+    FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+
+    Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+        await Firebase.initializeApp();
+        await Klaviyo.instance.handleBackgroundMessage(message);
+    }
+```
+
+Once your first push notifications are sent and opened, you should start to see *Opened Push* metrics within your Klaviyo dashboard.
