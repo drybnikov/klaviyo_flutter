@@ -19,16 +19,27 @@ class SampleApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Klaviyo example app'),
         ),
-        body: Center(
-          child: TextButton(
-            onPressed: () async {
-              await Klaviyo.instance.logEvent(
-                '\$successful_payment',
-                {'\$value': 'paymentValue'},
-              );
-            },
-            child: Text('Send Klaviyo SUCCESSFUL_PAYMENT event'),
-          ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextButton(
+              onPressed: () async {
+                await Klaviyo.instance.logEvent(
+                  '\$successful_payment',
+                  {'\$value': 'paymentValue'},
+                );
+              },
+              child: Text('Send Klaviyo SUCCESSFUL_PAYMENT event'),
+            ),
+            TextButton(
+              onPressed: () async {
+                final result = await Klaviyo.instance
+                    .handlePush({'_k': '', 'body': 'Hey'});
+                print('result:$result');
+              },
+              child: Text('Handle Klaviyo push'),
+            )
+          ],
         ),
       ),
     );

@@ -63,7 +63,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin {
           let arguments = call.arguments as! [String: Any]
 
           if let properties = arguments["message"] as? [String: Any],
-             let body = properties["body"] as? [String: Any], let _ = body["_k"] {
+            let _ = properties["_k"] {
               klaviyo.create(event: Event(name: .OpenedPush, properties: properties, profile: [:]))
 
               return result(true)
