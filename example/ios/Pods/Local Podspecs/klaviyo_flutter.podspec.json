@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "summary": "Klaviyo integration for Flutter",
   "description": "A new flutter plugin project.",
-  "homepage": "https://github.com/ChangeFinance/klaviyo_flutter",
+  "homepage": "https://github.com/drybnikov/klaviyo_flutter",
   "license": {
     "file": "../LICENSE"
   },
