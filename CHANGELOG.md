@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.1+3
+
+* Implemented `isInitialized`, `isKlaviyoPush`
+* Updated Android SDK to 1.0.1
+
 ## 0.0.1+2
 
 * Implemented `handlePush` on both Android and iOS

@@ -1,7 +1,7 @@
 package com.rightbite.denisr
 
+import android.app.Application
 import android.content.Context
-import android.content.pm.PackageManager
 import com.klaviyo.analytics.Klaviyo
 import com.klaviyo.analytics.model.Event
 import com.klaviyo.analytics.model.EventKey
@@ -21,6 +21,8 @@ private const val METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
 private const val METHOD_LOG_EVENT = "logEvent"
 private const val METHOD_HANDLE_PUSH = "handlePush"
 
+private const val TAG = "KlaviyoFlutterPlugin"
+
 class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
     private var applicationContext: Context? = null
     private lateinit var channel: MethodChannel
@@ -29,6 +31,15 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
         applicationContext = binding.applicationContext
         channel = MethodChannel(binding.binaryMessenger, CHANNEL_NAME)
         channel.setMethodCallHandler(this)
+        if (applicationContext is Application) {
+            val app = applicationContext as Application
+            app.registerActivityLifecycleCallbacks(Klaviyo.lifecycleCallbacks)
+        } else {
+            Log.w(
+                TAG,
+                "Context $applicationContext was not an application, can't register for lifecycle callbacks. Some notification events may be dropped as a result."
+            )
+        }
     }
 
     override fun onDetachedFromEngine(binding: FlutterPluginBinding) {
@@ -41,6 +52,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
             METHOD_INITIALIZE -> {
                 val apiKey = call.argument<String>("apiKey")
                 Klaviyo.initialize(apiKey!!, applicationContext!!)
+                Log.d(TAG, "initialized apiKey: $apiKey")
                 result.success("Klaviyo initialized")
             }
 
@@ -62,10 +74,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                     )
 
                     Klaviyo.setProfile(profile)
-                    Log.d(
-                        "KlaviyoFlutterPlugin",
-                        "update profile: ${profile.phoneNumber} ${profile.email}"
-                    )
+                    Log.d(TAG, "update profile: ${profile.phoneNumber} ${profile.email}")
                 }
 
                 result.success("Profile updated")
@@ -91,19 +100,20 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                 val metaData =
                     call.argument<HashMap<String, String>>("message") ?: emptyMap<String, String>()
                 if (Klaviyo.isKlaviyoPush(metaData)) {
-                    val event = Event(
-                        EventType.OPENED_PUSH,
-                        metaData.mapKeys {
-                            EventKey.CUSTOM(it.key)
-                        }
-                    )
-
-                    Klaviyo.getPushToken()?.let { event[EventKey.PUSH_TOKEN] = it }
-
+                    val event = Event(EventType.OPENED_PUSH, metaData.mapKeys {
+                        EventKey.CUSTOM(it.key)
+                    })
+                    try {
+                        Klaviyo.getPushToken()?.let { event[EventKey.PUSH_TOKEN] = it }
+                    } catch (e: Exception) {
+                        Log.e(
+                            TAG, "Failed handle push metaData:$metaData. Cause: $e"
+                        )
+                    }
                     Klaviyo.createEvent(event)
                     return result.success(true)
                 } else {
-                    result.success(false)
+                    return result.success(false)
                 }
             }
 

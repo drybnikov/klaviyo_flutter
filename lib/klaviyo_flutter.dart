@@ -14,6 +14,8 @@ class Klaviyo {
 
   static final Klaviyo _instance = Klaviyo._();
 
+  bool _initialized = false;
+
   /// get the instance of the [Klaviyo].
   static Klaviyo get instance => _instance;
 
@@ -25,8 +27,9 @@ class Klaviyo {
   /// * [public API key](https://www.klaviyo.com/settings/account/api-keys)
   ///
   /// Then, initialize Klaviyo in main method.
-  Future<void> initialize(String apiKey) {
-    return KlaviyoFlutterPlatform.instance.initialize(apiKey);
+  Future<void> initialize(String apiKey) async {
+    await KlaviyoFlutterPlatform.instance.initialize(apiKey);
+    _initialized = true;
   }
 
   /// To log events in Klaviyo that record what users do in your app and when they do it.
@@ -62,4 +65,10 @@ class Klaviyo {
   Future<bool> handlePush(Map<String, dynamic> message) async {
     return KlaviyoFlutterPlatform.instance.handlePush(message);
   }
+
+  /// Check if the Klaviyo already initialized
+  bool get isInitialized => _initialized;
+
+  /// Check if the push [message] is for Klaviyo
+  bool isKlaviyoPush(Map<String, dynamic> message) => message.containsKey('_k');
 }
