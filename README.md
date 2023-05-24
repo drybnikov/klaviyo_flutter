@@ -104,6 +104,17 @@ Notifications.
 The Klaviyo Push SDK for Android works as a wrapper around `FirebaseMessagingService` so the
 setup process is very similar to the Firebase client documentation linked above.
 You should follow all other setup recommendations from the FCM documentation.
+Register KlaviyoPushService to receive MESSAGING_EVENT intents. 
+This allows Klaviyo's Push SDK to receive new and updated push tokens via the onNewToken method, as well as display notifications via the onMessageReceived method.
+
+```xml
+<service android:name="com.klaviyo.pushFcm.KlaviyoPushService" android:exported="false">
+  <intent-filter>
+    <action android:name="com.google.firebase.MESSAGING_EVENT" />
+  </intent-filter>
+</service>
+```
+
 To specify a notification icon, add the following metadata to your app manifest.
 Absent this, the application's launcher icon will be used.
 

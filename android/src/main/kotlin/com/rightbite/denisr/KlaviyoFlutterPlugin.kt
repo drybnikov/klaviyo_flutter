@@ -103,15 +103,17 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                     val event = Event(EventType.OPENED_PUSH, metaData.mapKeys {
                         EventKey.CUSTOM(it.key)
                     })
-                    try {
+                    return try {
                         Klaviyo.getPushToken()?.let { event[EventKey.PUSH_TOKEN] = it }
+
+                        Klaviyo.createEvent(event)
+                        result.success(true)
                     } catch (e: Exception) {
                         Log.e(
                             TAG, "Failed handle push metaData:$metaData. Cause: $e"
                         )
+                        result.error("Failed handle push metaData", e.message, null)
                     }
-                    Klaviyo.createEvent(event)
-                    return result.success(true)
                 } else {
                     return result.success(false)
                 }
