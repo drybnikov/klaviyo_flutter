@@ -9,7 +9,6 @@ const MethodChannel _channel = MethodChannel('com.rightbite.denisr/klaviyo');
 
 /// An implementation of [KlaviyoFlutterPlatform] that uses method channels.
 class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
-
   @override
   Future<void> initialize(String apiKey) async {
     await _channel.invokeMethod('initialize', {
