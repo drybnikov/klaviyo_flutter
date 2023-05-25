@@ -87,4 +87,13 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
   Future<bool> handlePush(Map<String, dynamic> message) async {
     throw UnimplementedError('handlePush() has not been implemented.');
   }
+
+  /// @return The external ID of the currently tracked profile, if set
+  Future<String?> getExternalId() async {
+    throw UnimplementedError('getExternalId() has not been implemented.');
+  }
+
+  Future<void> resetProfile() async {
+    throw UnimplementedError('resetProfile() has not been implemented.');
+  }
 }

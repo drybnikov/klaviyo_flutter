@@ -42,10 +42,17 @@ void main() {
         'first_name': 'John Doe',
         'last_name': 'Doe',
         'address1': 'Some street 1',
+        'address2': '',
         'region': 'Tallinn',
         'latitude': '59.436962',
         'longitude': '24.753574',
       });
+    });
+
+    test('resetProfile', () {
+      Klaviyo.instance.resetProfile();
+
+      expectMethodCall('resetProfile');
     });
   });
 

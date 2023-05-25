@@ -9,7 +9,6 @@ const MethodChannel _channel = MethodChannel('com.rightbite.denisr/klaviyo');
 
 /// An implementation of [KlaviyoFlutterPlatform] that uses method channels.
 class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
-  String userId = '';
 
   @override
   Future<void> initialize(String apiKey) async {
@@ -21,19 +20,12 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
   /// Assign new identifiers and attributes to the currently tracked profile once.
   @override
   Future<String> updateProfile(KlaviyoProfileModel profileModel) async {
-    /// If the user is not identified, we will update the profile with the external_id
-    if (userId.isEmpty) {
-      userId = profileModel.id;
+    final resultMap = await _channel.invokeMethod<String>(
+      'updateProfile',
+      profileModel.toJson(),
+    );
 
-      final resultMap = await _channel.invokeMethod<String>(
-        'updateProfile',
-        profileModel.toJson(),
-      );
-
-      return resultMap.toString();
-    } else {
-      return 'user[$userId] already updated';
-    }
+    return resultMap.toString();
   }
 
   @override
@@ -63,4 +55,11 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
         await _channel.invokeMethod<bool>('handlePush', {'message': message});
     return result ?? false;
   }
+
+  @override
+  Future<String?> getExternalId() {
+    return _channel.invokeMethod('getExternalId');
+  }
+
+  Future<void> resetProfile() => _channel.invokeMethod('resetProfile');
 }

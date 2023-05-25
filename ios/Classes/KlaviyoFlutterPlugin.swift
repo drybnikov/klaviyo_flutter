@@ -11,6 +11,8 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin {
   private let METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
   private let METHOD_LOG_EVENT = "logEvent"
   private let METHOD_HANDLE_PUSH = "handlePush"
+  private let METHOD_GET_EXTERNAL_ID = "getExternalId"
+  private let METHOD_RESET_PROFILE = "resetProfile"
 
   private let klaviyo = KlaviyoSDK()
 
@@ -43,6 +45,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin {
             lastName: arguments["last_name"] as? String,
             location: Profile.Location(
                 address1: arguments["address1"] as? String,
+                address2: arguments["address2"] as? String,
                 latitude: (arguments["latitude"] as? String)?.toDouble,
                 longitude: (arguments["latitude"] as? String)?.toDouble,
                 region: arguments["region"] as? String)
@@ -69,6 +72,13 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin {
               return result(true)
           }
           result(false)
+
+        case METHOD_GET_EXTERNAL_ID:
+          result(klaviyo.externalId)
+
+        case METHOD_RESET_PROFILE:
+          klaviyo.resetProfile()
+          result(true)
 
         default:
           result(FlutterMethodNotImplemented)

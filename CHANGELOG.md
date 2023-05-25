@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.1+4
+
+* Implemented `getExternalId`, `resetProfile` on both Android and iOS
+
 ## 0.0.1+3
 
 * Implemented `isInitialized`, `isKlaviyoPush`

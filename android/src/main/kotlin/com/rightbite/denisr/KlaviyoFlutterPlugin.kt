@@ -20,6 +20,8 @@ private const val METHOD_INITIALIZE = "initialize"
 private const val METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
 private const val METHOD_LOG_EVENT = "logEvent"
 private const val METHOD_HANDLE_PUSH = "handlePush"
+private const val METHOD_GET_EXTERNAL_ID = "getExternalId"
+private const val METHOD_RESET_PROFILE = "resetProfile"
 
 private const val TAG = "KlaviyoFlutterPlugin"
 
@@ -74,7 +76,10 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                     )
 
                     Klaviyo.setProfile(profile)
-                    Log.d(TAG, "update profile: ${profile.phoneNumber} ${profile.email}")
+                    Log.d(
+                        TAG,
+                        "Profile updated: ${Klaviyo.getExternalId()}, profileMap: $profileMap"
+                    )
                 }
 
                 result.success("Profile updated")
@@ -117,6 +122,13 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                 } else {
                     return result.success(false)
                 }
+            }
+
+            METHOD_GET_EXTERNAL_ID -> result.success(Klaviyo.getExternalId())
+
+            METHOD_RESET_PROFILE -> {
+                Klaviyo.resetProfile()
+                result.success(true)
             }
 
             else -> result.notImplemented()

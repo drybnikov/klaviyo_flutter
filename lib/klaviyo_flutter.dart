@@ -71,4 +71,17 @@ class Klaviyo {
 
   /// Check if the push [message] is for Klaviyo
   bool isKlaviyoPush(Map<String, dynamic> message) => message.containsKey('_k');
+
+  /// @return The external ID of the currently tracked profile, if set
+  Future<String?> getExternalId() =>
+      KlaviyoFlutterPlatform.instance.getExternalId();
+
+  /// Clears all stored profile identifiers (e.g. email or phone) and starts a new tracked profile
+  ///
+  /// NOTE: if a push token was registered to the current profile, you will need to
+  /// call `setPushToken` again to associate this device to a new profile
+  ///
+  /// This should be called whenever an active user in your app is removed
+  /// (e.g. after a logout)
+  Future<void> resetProfile() => KlaviyoFlutterPlatform.instance.resetProfile();
 }

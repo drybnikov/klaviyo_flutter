@@ -7,6 +7,7 @@ class KlaviyoProfileModel extends Equatable {
   final String? firstName;
   final String? lastName;
   final String? address1;
+  final String? address2;
   final String? region;
   final String? latitude;
   final String? longitude;
@@ -18,6 +19,7 @@ class KlaviyoProfileModel extends Equatable {
     this.firstName,
     this.lastName,
     this.address1,
+    this.address2,
     this.region,
     this.latitude,
     this.longitude,
@@ -38,6 +40,7 @@ class KlaviyoProfileModel extends Equatable {
         'first_name': firstName ?? '',
         'last_name': lastName ?? '',
         'address1': address1 ?? '',
+        'address2': address2 ?? '',
         'region': region ?? '',
         'latitude': latitude ?? '',
         'longitude': longitude ?? '',
