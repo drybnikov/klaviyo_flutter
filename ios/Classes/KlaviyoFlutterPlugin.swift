@@ -3,7 +3,7 @@ import Flutter
 import KlaviyoSwift
 
 /// A class that receives and handles calls from Flutter to complete the payment.
-public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin {
+public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCenterDelegate {
   private static let methodChannelName = "com.rightbite.denisr/klaviyo"
     
   private let METHOD_UPDATE_PROFILE = "updateProfile"
@@ -19,7 +19,20 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let messenger = registrar.messenger()
     let channel = FlutterMethodChannel(name: methodChannelName, binaryMessenger: messenger)
-    registrar.addMethodCallDelegate(KlaviyoFlutterPlugin(), channel: channel)
+    let instance = KlaviyoFlutterPlugin()
+
+    if #available(OSX 10.14, *) {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = instance
+    }
+
+    registrar.addMethodCallDelegate(instance, channel: channel)
+  }
+
+  //Tracking push notifications
+  @available(OSX 10.14, *)
+  public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    let handled = KlaviyoSDK().handle(notificationResponse: response, withCompletionHandler: completionHandler)
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {

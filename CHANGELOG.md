@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.1+5
+
+* Added iOS extension to tracking push notifications to fixed issue #1
+
 ## 0.0.1+4
 
 * Implemented `getExternalId`, `resetProfile` on both Android and iOS
