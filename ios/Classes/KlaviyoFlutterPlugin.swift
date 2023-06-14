@@ -14,6 +14,11 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
   private let METHOD_GET_EXTERNAL_ID = "getExternalId"
   private let METHOD_RESET_PROFILE = "resetProfile"
 
+  private let METHOD_SET_EMAIL = "setEmail"
+  private let METHOD_GET_EMAIL = "getEmail"
+  private let METHOD_SET_PHONE_NUMBER = "setPhoneNumber"
+  private let METHOD_GET_PHONE_NUMBER = "getPhoneNumber"
+
   private let klaviyo = KlaviyoSDK()
 
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -92,6 +97,22 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
         case METHOD_RESET_PROFILE:
           klaviyo.resetProfile()
           result(true)
+
+        case METHOD_GET_EMAIL:
+          result(klaviyo.email)
+
+        case METHOD_GET_PHONE_NUMBER:
+          result(klaviyo.phoneNumber)
+
+        case METHOD_SET_EMAIL:
+          let arguments = call.arguments as! [String: Any]
+          klaviyo.set(email: arguments["email"] as! String)
+          result("Email updated")
+
+        case METHOD_SET_PHONE_NUMBER:
+          let arguments = call.arguments as! [String: Any]
+          klaviyo.set(phoneNumber: arguments["phoneNumber"] as! String)
+          result("Phone updated")
 
         default:
           result(FlutterMethodNotImplemented)
