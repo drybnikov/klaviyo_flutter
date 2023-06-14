@@ -22,6 +22,10 @@ private const val METHOD_LOG_EVENT = "logEvent"
 private const val METHOD_HANDLE_PUSH = "handlePush"
 private const val METHOD_GET_EXTERNAL_ID = "getExternalId"
 private const val METHOD_RESET_PROFILE = "resetProfile"
+private const val METHOD_SET_EMAIL = "setEmail"
+private const val METHOD_GET_EMAIL = "getEmail"
+private const val METHOD_SET_PHONE_NUMBER = "setPhoneNumber"
+private const val METHOD_GET_PHONE_NUMBER = "getPhoneNumber"
 
 private const val TAG = "KlaviyoFlutterPlugin"
 
@@ -129,6 +133,21 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
             METHOD_RESET_PROFILE -> {
                 Klaviyo.resetProfile()
                 result.success(true)
+            }
+
+            METHOD_GET_EMAIL -> result.success(Klaviyo.getEmail())
+            METHOD_GET_PHONE_NUMBER -> result.success(Klaviyo.getPhoneNumber())
+
+            METHOD_SET_EMAIL -> {
+                val newEmail = call.argument<String>("email")
+                Klaviyo.setEmail(newEmail)
+                result.success("Email updated")
+            }
+
+            METHOD_SET_PHONE_NUMBER -> {
+                val newPhone = call.argument<String>("phoneNumber")
+                Klaviyo.setPhoneNumber(newPhone)
+                result.success("Phone number updated")
             }
 
             else -> result.notImplemented()

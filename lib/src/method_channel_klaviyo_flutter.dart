@@ -61,4 +61,14 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
   }
 
   Future<void> resetProfile() => _channel.invokeMethod('resetProfile');
+
+  Future<void> setEmail(String email) =>
+      _channel.invokeMethod('setEmail', {'email': email});
+
+  Future<String?> getEmail() => _channel.invokeMethod('getEmail');
+
+  Future<void> setPhoneNumber(String phoneNumber) =>
+      _channel.invokeMethod('setPhoneNumber', {'phoneNumber': phoneNumber});
+
+  Future<String?> getPhoneNumber() => _channel.invokeMethod('getPhoneNumber');
 }

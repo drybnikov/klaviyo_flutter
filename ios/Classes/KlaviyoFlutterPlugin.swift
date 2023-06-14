@@ -14,6 +14,11 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
   private let METHOD_GET_EXTERNAL_ID = "getExternalId"
   private let METHOD_RESET_PROFILE = "resetProfile"
 
+  private let METHOD_SET_EMAIL = "setEmail"
+  private let METHOD_GET_EMAIL = "getEmail"
+  private let METHOD_SET_PHONE_NUMBER = "setPhoneNumber"
+  private let METHOD_GET_PHONE_NUMBER = "getPhoneNumber"
+
   private let klaviyo = KlaviyoSDK()
 
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -29,10 +34,23 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
-  //Tracking push notifications
-  @available(OSX 10.14, *)
+  // below method will be called when the user interacts with the push notification
   public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     let handled = KlaviyoSDK().handle(notificationResponse: response, withCompletionHandler: completionHandler)
+    if !handled {
+        completionHandler()
+    }
+  }
+
+  // below method is called when the app receives push notifications when the app is the foreground
+  public func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                  willPresent notification: UNNotification,
+                                  withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+     if #available(iOS 14.0, *) {
+        completionHandler([.list, .banner])
+     } else {
+        completionHandler([.alert])
+     }
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
@@ -92,6 +110,22 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
         case METHOD_RESET_PROFILE:
           klaviyo.resetProfile()
           result(true)
+
+        case METHOD_GET_EMAIL:
+          result(klaviyo.email)
+
+        case METHOD_GET_PHONE_NUMBER:
+          result(klaviyo.phoneNumber)
+
+        case METHOD_SET_EMAIL:
+          let arguments = call.arguments as! [String: Any]
+          klaviyo.set(email: arguments["email"] as! String)
+          result("Email updated")
+
+        case METHOD_SET_PHONE_NUMBER:
+          let arguments = call.arguments as! [String: Any]
+          klaviyo.set(phoneNumber: arguments["phoneNumber"] as! String)
+          result("Phone updated")
 
         default:
           result(FlutterMethodNotImplemented)

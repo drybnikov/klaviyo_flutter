@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.1+6
+
+* Implemented `setEmail`, `getEmail`, `setPhoneNumber`, `getPhoneNumber` on both Android and iOS
+
 ## 0.0.1+5
 
 * Added iOS extension to tracking push notifications to fixed issue #1

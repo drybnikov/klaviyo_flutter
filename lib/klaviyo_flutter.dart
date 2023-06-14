@@ -84,4 +84,38 @@ class Klaviyo {
   /// This should be called whenever an active user in your app is removed
   /// (e.g. after a logout)
   Future<void> resetProfile() => KlaviyoFlutterPlatform.instance.resetProfile();
+
+  /// Assigns an email address to the currently tracked Klaviyo profile
+  ///
+  /// The SDK keeps track of current profile details to
+  /// build analytics requests with profile identifiers
+  ///
+  /// This should be called whenever the active user in your app changes
+  /// (e.g. after a fresh login)
+  ///
+  /// @param [email] Email address for active user
+  Future<void> setEmail(String email) =>
+      KlaviyoFlutterPlatform.instance.setEmail(email);
+
+  /// @return The email of the currently tracked profile, if set
+  Future<String?> getEmail() => KlaviyoFlutterPlatform.instance.getEmail();
+
+  /// Assigns a phone number to the currently tracked Klaviyo profile
+  ///
+  /// NOTE: Phone number format is not validated, but should conform to Klaviyo formatting
+  /// see (documentation)[https://help.klaviyo.com/hc/en-us/articles/360046055671-Accepted-phone-number-formats-for-SMS-in-Klaviyo]
+  ///
+  /// The SDK keeps track of current profile details to
+  /// build analytics requests with profile identifiers
+  ///
+  /// This should be called whenever the active user in your app changes
+  /// (e.g. after a fresh login)
+  ///
+  /// @param [phoneNumber] Phone number for active user
+  Future<void> setPhoneNumber(String phoneNumber) =>
+      KlaviyoFlutterPlatform.instance.setPhoneNumber(phoneNumber);
+
+  /// @return The phone number of the currently tracked profile, if set
+  Future<String?> getPhoneNumber() =>
+      KlaviyoFlutterPlatform.instance.getPhoneNumber();
 }

@@ -96,4 +96,43 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
   Future<void> resetProfile() async {
     throw UnimplementedError('resetProfile() has not been implemented.');
   }
+
+  /// Assigns an email address to the currently tracked Klaviyo profile
+  ///
+  /// The SDK keeps track of current profile details to
+  /// build analytics requests with profile identifiers
+  ///
+  /// This should be called whenever the active user in your app changes
+  /// (e.g. after a fresh login)
+  ///
+  /// @param [email] Email address for active user
+  Future<void> setEmail(String email) async {
+    throw UnimplementedError('setEmail() has not been implemented.');
+  }
+
+  /// @return The email of the currently tracked profile, if set
+  Future<String?> getEmail() async {
+    throw UnimplementedError('getEmail() has not been implemented.');
+  }
+
+  /// Assigns a phone number to the currently tracked Klaviyo profile
+  ///
+  /// NOTE: Phone number format is not validated, but should conform to Klaviyo formatting
+  /// see (documentation)[https://help.klaviyo.com/hc/en-us/articles/360046055671-Accepted-phone-number-formats-for-SMS-in-Klaviyo]
+  ///
+  /// The SDK keeps track of current profile details to
+  /// build analytics requests with profile identifiers
+  ///
+  /// This should be called whenever the active user in your app changes
+  /// (e.g. after a fresh login)
+  ///
+  /// @param [phoneNumber] Phone number for active user
+  Future<void> setPhoneNumber(String phoneNumber) async {
+    throw UnimplementedError('setPhoneNumber() has not been implemented.');
+  }
+
+  /// @return The phone number of the currently tracked profile, if set
+  Future<String?> getPhoneNumber() async {
+    throw UnimplementedError('getPhoneNumber() has not been implemented.');
+  }
 }
