@@ -34,10 +34,23 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
-  //Tracking push notifications
-  @available(OSX 10.14, *)
+  // below method will be called when the user interacts with the push notification
   public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     let handled = KlaviyoSDK().handle(notificationResponse: response, withCompletionHandler: completionHandler)
+    if !handled {
+        completionHandler()
+    }
+  }
+
+  // below method is called when the app receives push notifications when the app is the foreground
+  public func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                  willPresent notification: UNNotification,
+                                  withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+     if #available(iOS 14.0, *) {
+        completionHandler([.list, .banner])
+     } else {
+        completionHandler([.alert])
+     }
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
