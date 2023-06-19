@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.1+7
+
+* Updated Android SDK to 1.1.0, null checks
+
 ## 0.0.1+6
 
 * Implemented `setEmail`, `getEmail`, `setPhoneNumber`, `getPhoneNumber` on both Android and iOS

@@ -139,15 +139,17 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
             METHOD_GET_PHONE_NUMBER -> result.success(Klaviyo.getPhoneNumber())
 
             METHOD_SET_EMAIL -> {
-                val newEmail = call.argument<String>("email")
-                Klaviyo.setEmail(newEmail)
-                result.success("Email updated")
+                call.argument<String>("email")?.let { newEmail ->
+                    Klaviyo.setEmail(newEmail)
+                    result.success("Email updated")
+                }
             }
 
             METHOD_SET_PHONE_NUMBER -> {
-                val newPhone = call.argument<String>("phoneNumber")
-                Klaviyo.setPhoneNumber(newPhone)
-                result.success("Phone number updated")
+                call.argument<String>("phoneNumber")?.let { newPhone ->
+                    Klaviyo.setPhoneNumber(newPhone)
+                    result.success("Phone number updated")
+                }
             }
 
             else -> result.notImplemented()
