@@ -23,7 +23,7 @@ void main() {
 
     test('updateUser', () {
       Klaviyo.instance.updateProfile(
-        KlaviyoProfileModel(
+        KlaviyoProfile(
           id: '1',
           email: 'test@example.com',
           phoneNumber: '+37256123456',

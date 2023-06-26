@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/services.dart';
 
 import 'klaviyo_flutter_platform_interface.dart';
-import 'klaviyo_profile_model.dart';
+import 'klaviyo_profile.dart';
 
 const MethodChannel _channel = MethodChannel('com.rightbite.denisr/klaviyo');
 
@@ -18,7 +18,7 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
 
   /// Assign new identifiers and attributes to the currently tracked profile once.
   @override
-  Future<String> updateProfile(KlaviyoProfileModel profileModel) async {
+  Future<String> updateProfile(KlaviyoProfile profileModel) async {
     final resultMap = await _channel.invokeMethod<String>(
       'updateProfile',
       profileModel.toJson(),

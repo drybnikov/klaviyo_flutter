@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class KlaviyoProfileModel extends Equatable {
+class KlaviyoProfile extends Equatable {
   final String? id;
   final String? email;
   final String? phoneNumber;
@@ -12,7 +12,7 @@ class KlaviyoProfileModel extends Equatable {
   final String? latitude;
   final String? longitude;
 
-  const KlaviyoProfileModel({
+  const KlaviyoProfile({
     this.id,
     this.email,
     this.phoneNumber,
