@@ -78,7 +78,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
                 address1: arguments["address1"] as? String,
                 address2: arguments["address2"] as? String,
                 latitude: (arguments["latitude"] as? String)?.toDouble,
-                longitude: (arguments["latitude"] as? String)?.toDouble,
+                longitude: (arguments["longitude"] as? String)?.toDouble,
                 region: arguments["region"] as? String)
             )
           klaviyo.set(profile: profile)
