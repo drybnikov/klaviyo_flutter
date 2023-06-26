@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.2+1
+
+* Fix for sending properties to Klaviyo API, empty string in phone number caused an issue
+* Added missing properties: `organization`, `title`, `image` and `properties`
+
 ## 0.0.1+7
 
 * Updated Android SDK to 1.1.0, null checks
