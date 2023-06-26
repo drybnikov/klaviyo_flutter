@@ -9,6 +9,8 @@ build/
 .idea/
 android/bin/
 example/.flutter-plugins-dependencies
+example/.flutter-plugins
 example/ios/Flutter/flutter_export_environment.sh
 /example/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 /example/ios/Podfile.lock
+/example/ios/Flutter/Generated.xcconfig
