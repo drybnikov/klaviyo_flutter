@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 
 class KlaviyoProfileModel extends Equatable {
-  final String id;
-  final String email;
+  final String? id;
+  final String? email;
   final String? phoneNumber;
   final String? firstName;
   final String? lastName;
@@ -13,8 +13,8 @@ class KlaviyoProfileModel extends Equatable {
   final String? longitude;
 
   const KlaviyoProfileModel({
-    required this.id,
-    required this.email,
+    this.id,
+    this.email,
     this.phoneNumber,
     this.firstName,
     this.lastName,
@@ -36,13 +36,13 @@ class KlaviyoProfileModel extends Equatable {
   Map<String, dynamic> toJson() => {
         'external_id': id,
         'email': email,
-        'phone_number': phoneNumber ?? '',
-        'first_name': firstName ?? '',
-        'last_name': lastName ?? '',
-        'address1': address1 ?? '',
-        'address2': address2 ?? '',
-        'region': region ?? '',
-        'latitude': latitude ?? '',
-        'longitude': longitude ?? '',
+        'phone_number': phoneNumber,
+        'first_name': firstName,
+        'last_name': lastName,
+        'address1': address1,
+        'address2': address2,
+        'region': region,
+        'latitude': latitude,
+        'longitude': longitude,
       };
 }
