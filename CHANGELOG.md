@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.2+2
+
+* Fix for sending properties to Klaviyo API via Android 
+
 ## 0.0.2+1
 
 * Fix for sending properties to Klaviyo API, empty string in phone number caused an issue
