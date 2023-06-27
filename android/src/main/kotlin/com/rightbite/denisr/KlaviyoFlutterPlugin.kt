@@ -29,6 +29,8 @@ private const val METHOD_GET_EMAIL = "getEmail"
 private const val METHOD_SET_PHONE_NUMBER = "setPhoneNumber"
 private const val METHOD_GET_PHONE_NUMBER = "getPhoneNumber"
 
+private const val PROFILE_PROPERTIES_KEY = "properties"
+
 private const val TAG = "KlaviyoFlutterPlugin"
 
 class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
@@ -77,17 +79,15 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                 try {
                 val profilePropertiesRaw = call.arguments<Map<String, Any>?>()
                     ?: throw RuntimeException("Profile properties not exist")
-                
-                val customPropertiesKey = "properties"
 
                 var profileProperties = convertMapToSeralizedMap(profilePropertiesRaw)
 
-                val customProperties = profileProperties[customPropertiesKey] as Map<String, Serializable>;
+                val customProperties = profileProperties[PROFILE_PROPERTIES_KEY] as Map<String, Serializable>;
                 
                 if(customProperties != null) {
                     // as Android Klaviyo SDK requests properties to be on same Map level
                     // we should unwrap properties
-                    profileProperties = profileProperties.minus(customPropertiesKey)
+                    profileProperties = profileProperties.minus(PROFILE_PROPERTIES_KEY)
                     profileProperties = profileProperties.plus(customProperties)
                 }
                  
@@ -108,7 +108,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                 result.success("Profile updated")
                 }
                 catch (e: Exception) {
-                    result.error("1", e.message, e)
+                    result.error("Profile update error", e.message, e)
                 }
             }
 
