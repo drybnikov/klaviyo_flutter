@@ -3,10 +3,10 @@ library klaviyo_flutter;
 import 'dart:async';
 
 import 'package:klaviyo_flutter/src/klaviyo_flutter_platform_interface.dart';
-import 'package:klaviyo_flutter/src/klaviyo_profile_model.dart';
+import 'package:klaviyo_flutter/src/klaviyo_profile.dart';
 
 export 'klaviyo_flutter.dart';
-export 'src/klaviyo_profile_model.dart';
+export 'src/klaviyo_profile.dart';
 
 class Klaviyo {
   /// private constructor to not allow the object creation from outside.
@@ -57,7 +57,7 @@ class Klaviyo {
   /// @return Returns Future<String> success when called on Android or iOS
   ///
   /// All profile attributes recognised by the Klaviyo APIs [com.klaviyo.analytics.model.ProfileKey]
-  Future<String> updateProfile(KlaviyoProfileModel profileModel) async {
+  Future<String> updateProfile(KlaviyoProfile profileModel) async {
     return KlaviyoFlutterPlatform.instance.updateProfile(profileModel);
   }
 

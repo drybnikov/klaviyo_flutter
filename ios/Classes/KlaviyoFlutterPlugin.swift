@@ -68,18 +68,36 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
 
         case METHOD_UPDATE_PROFILE:
           let arguments = call.arguments as! [String: Any]
+          // parsing location
+          let address1 = arguments["address1"] as? String
+          let address2 = arguments["address2"] as? String
+          let latitude = (arguments["latitude"] as? String)?.toDouble
+          let longitude = (arguments["longitude"] as? String)?.toDouble
+          let region = arguments["region"] as? String
+        
+          var location: Profile.Location?
+        
+          if(address1 != nil && address2 != nil && latitude != nil && longitude != nil && region != nil) {
+            location = Profile.Location(
+                address1: address1,
+                address2: address2,
+                latitude: latitude,
+                longitude: longitude,
+                region: region)
+          }
+        
+        
           let profile = Profile(
             email: arguments["email"] as? String,
             phoneNumber: arguments["phone_number"] as? String,
             externalId: arguments["external_id"] as? String,
             firstName: arguments["first_name"] as? String,
             lastName: arguments["last_name"] as? String,
-            location: Profile.Location(
-                address1: arguments["address1"] as? String,
-                address2: arguments["address2"] as? String,
-                latitude: (arguments["latitude"] as? String)?.toDouble,
-                longitude: (arguments["latitude"] as? String)?.toDouble,
-                region: arguments["region"] as? String)
+            organization: arguments["organization"] as? String,
+            title: arguments["title"] as? String,
+            image: arguments["image"] as? String,
+            location: location,
+            properties: arguments["properties"] as? [String:Any]
             )
           klaviyo.set(profile: profile)
           result("Profile updated")

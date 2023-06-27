@@ -1,4 +1,4 @@
-import 'package:klaviyo_flutter/src/klaviyo_profile_model.dart';
+import 'package:klaviyo_flutter/src/klaviyo_profile.dart';
 import 'package:klaviyo_flutter/src/method_channel_klaviyo_flutter.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -79,7 +79,7 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
   //     object REGION : ProfileKey("region")
   //     object ZIP : ProfileKey("zip")
   //     object TIMEZONE : ProfileKey("timezone")
-  Future<String> updateProfile(KlaviyoProfileModel profileModel) async {
+  Future<String> updateProfile(KlaviyoProfile profileModel) async {
     throw UnimplementedError('updateProfile() has not been implemented.');
   }
 
