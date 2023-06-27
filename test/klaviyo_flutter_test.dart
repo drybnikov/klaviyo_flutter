@@ -29,24 +29,40 @@ void main() {
           phoneNumber: '+37256123456',
           firstName: 'John Doe',
           lastName: 'Doe',
+          organization: 'Organization',
+          title: 'title',
+          image: 'http://someurl.com/image.png',
           address1: 'Some street 1',
+          address2: 'Some steet 2',
           region: 'Tallinn',
           latitude: '59.436962',
           longitude: '24.753574',
+          properties: {
+            'app_version': 321,
+          },
         ),
       );
-      expectMethodCall('updateProfile', arguments: {
-        'external_id': '1',
-        'email': 'test@example.com',
-        'phone_number': '+37256123456',
-        'first_name': 'John Doe',
-        'last_name': 'Doe',
-        'address1': 'Some street 1',
-        'address2': '',
-        'region': 'Tallinn',
-        'latitude': '59.436962',
-        'longitude': '24.753574',
-      });
+      expectMethodCall(
+        'updateProfile',
+        arguments: {
+          'external_id': '1',
+          'email': 'test@example.com',
+          'phone_number': '+37256123456',
+          'first_name': 'John Doe',
+          'last_name': 'Doe',
+          'organization': 'Organization',
+          'title': 'title',
+          'image': 'http://someurl.com/image.png',
+          'address1': 'Some street 1',
+          'address2': 'Some steet 2',
+          'region': 'Tallinn',
+          'latitude': '59.436962',
+          'longitude': '24.753574',
+          'properties': {
+            'app_version': 321,
+          }
+        },
+      );
     });
 
     test('resetProfile', () {
