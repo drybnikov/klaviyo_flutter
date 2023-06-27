@@ -14,6 +14,8 @@ import io.flutter.embedding.engine.plugins.FlutterPlugin.FlutterPluginBinding
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
+import java.io.Serializable
+import java.lang.RuntimeException
 
 private const val METHOD_UPDATE_PROFILE = "updateProfile"
 private const val METHOD_INITIALIZE = "initialize"
@@ -72,21 +74,42 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
             }
 
             METHOD_UPDATE_PROFILE -> {
-                call.arguments<HashMap<String, String>>()?.let { profileMap ->
-                    val profile = Profile(
-                        profileMap.map { (key, value) ->
-                            ProfileKey.CUSTOM(key) to value
-                        }.toMap()
-                    )
+                try {
+                val profilePropertiesRaw = call.arguments<Map<String, Any>?>()
+                    ?: throw RuntimeException("Profile properties not exist")
+                
+                val customPropertiesKey = "properties"
 
-                    Klaviyo.setProfile(profile)
-                    Log.d(
-                        TAG,
-                        "Profile updated: ${Klaviyo.getExternalId()}, profileMap: $profileMap"
-                    )
+                var profileProperties = convertMapToSeralizedMap(profilePropertiesRaw)
+
+                val customProperties = profileProperties[customPropertiesKey] as Map<String, Serializable>;
+                
+                if(customProperties != null) {
+                    // as Android Klaviyo SDK requests properties to be on same Map level
+                    // we should unwrap properties
+                    profileProperties = profileProperties.minus(customPropertiesKey)
+                    profileProperties = profileProperties.plus(customProperties)
                 }
+                 
+                 
+                val profile = Profile(
+                    profileProperties.map { (key, value) ->
+                        ProfileKey.CUSTOM(key) to value
+                    }.toMap()
+                )
+
+                Klaviyo.setProfile(profile)
+                Log.d(
+                    TAG,
+                    "Profile updated: ${Klaviyo.getExternalId()}, profileMap: $profileProperties"
+                )
+                
 
                 result.success("Profile updated")
+                }
+                catch (e: Exception) {
+                    result.error("1", e.message, e)
+                }
             }
 
             METHOD_LOG_EVENT -> {
@@ -159,4 +182,20 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
     companion object {
         private const val CHANNEL_NAME = "com.rightbite.denisr/klaviyo"
     }
+}
+
+fun convertMapToSeralizedMap(map: Map<String, Any>): Map<String, Serializable> {
+    val convertedMap = mutableMapOf<String, Serializable>()
+    
+    for ((key, value) in map) {
+        if (value is Serializable) {
+            convertedMap[key] = value
+        } else {
+            // Handle non-serializable values here if needed
+            // For example, you could skip them or throw an exception
+            // depending on your requirements.
+        }
+    }
+    
+    return convertedMap
 }
