@@ -6,7 +6,7 @@
 Flutter wrapper for Klaviyo [Android](https://github.com/klaviyo/klaviyo-android-sdk),
 and [iOS](https://github.com/klaviyo/klaviyo-swift-sdk) projects.
 
-- Uses Klaviyo Android SDK Version `1.0.0`.
+- Uses Klaviyo Android SDK Version `1.1.1`.
 - The minimum Android SDK `minSdkVersion` required is 23.
 - Uses Klaviyo iOS SDK Version `2.0.1`.
 - The minimum iOS target version required is 13.
@@ -55,13 +55,11 @@ documentation for more information.
 ### Android
 
 Permissions:
-
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
 Optional permissions:
-
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><uses-permission
 android:name="android.permission.VIBRATE" /><uses-permission
@@ -69,7 +67,6 @@ android:name="android.permission.POST_NOTIFICATIONS" />
 ```
 
 Enable AndroidX + Jetifier support in your android/gradle.properties file (see example app):
-
 ```
 android.useAndroidX=true
 android.enableJetifier=true

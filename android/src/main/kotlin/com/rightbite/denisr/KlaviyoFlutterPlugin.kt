@@ -15,7 +15,6 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import java.io.Serializable
-import java.lang.RuntimeException
 
 private const val METHOD_UPDATE_PROFILE = "updateProfile"
 private const val METHOD_INITIALIZE = "initialize"
@@ -77,37 +76,36 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
 
             METHOD_UPDATE_PROFILE -> {
                 try {
-                val profilePropertiesRaw = call.arguments<Map<String, Any>?>()
-                    ?: throw RuntimeException("Profile properties not exist")
+                    val profilePropertiesRaw = call.arguments<Map<String, Any>?>()
+                        ?: throw RuntimeException("Profile properties not exist")
 
-                var profileProperties = convertMapToSeralizedMap(profilePropertiesRaw)
+                    var profileProperties = convertMapToSeralizedMap(profilePropertiesRaw)
 
-                val customProperties = profileProperties[PROFILE_PROPERTIES_KEY] as Map<String, Serializable>;
-                
-                if(customProperties != null) {
-                    // as Android Klaviyo SDK requests properties to be on same Map level
-                    // we should unwrap properties
-                    profileProperties = profileProperties.minus(PROFILE_PROPERTIES_KEY)
-                    profileProperties = profileProperties.plus(customProperties)
-                }
-                 
-                 
-                val profile = Profile(
-                    profileProperties.map { (key, value) ->
-                        ProfileKey.CUSTOM(key) to value
-                    }.toMap()
-                )
+                    val customProperties =
+                        profileProperties[PROFILE_PROPERTIES_KEY] as Map<String, Serializable>?
 
-                Klaviyo.setProfile(profile)
-                Log.d(
-                    TAG,
-                    "Profile updated: ${Klaviyo.getExternalId()}, profileMap: $profileProperties"
-                )
-                
+                    if (customProperties != null) {
+                        // as Android Klaviyo SDK requests properties to be on same Map level
+                        // we should unwrap properties
+                        profileProperties = profileProperties.minus(PROFILE_PROPERTIES_KEY)
+                        profileProperties = profileProperties.plus(customProperties)
+                    }
 
-                result.success("Profile updated")
-                }
-                catch (e: Exception) {
+                    val profile = Profile(
+                        profileProperties.map { (key, value) ->
+                            ProfileKey.CUSTOM(key) to value
+                        }.toMap()
+                    )
+
+                    Klaviyo.setProfile(profile)
+                    Log.d(
+                        TAG,
+                        "Profile updated: ${Klaviyo.getExternalId()}, profileMap: $profileProperties"
+                    )
+
+
+                    result.success("Profile updated")
+                } catch (e: Exception) {
                     result.error("Profile update error", e.message, e)
                 }
             }
@@ -131,12 +129,13 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
             METHOD_HANDLE_PUSH -> {
                 val metaData =
                     call.argument<HashMap<String, String>>("message") ?: emptyMap<String, String>()
-                if (Klaviyo.isKlaviyoPush(metaData)) {
-                    val event = Event(EventType.OPENED_PUSH, metaData.mapKeys {
+
+                if (isKlaviyoPush(metaData)) {
+                    val event = Event(EventType.CUSTOM("\$opened_push"), metaData.mapKeys {
                         EventKey.CUSTOM(it.key)
                     })
                     return try {
-                        Klaviyo.getPushToken()?.let { event[EventKey.PUSH_TOKEN] = it }
+                        Klaviyo.getPushToken()?.let { event[EventKey.CUSTOM("push_token")] = it }
 
                         Klaviyo.createEvent(event)
                         result.success(true)
@@ -179,14 +178,16 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
         }
     }
 
+    private fun isKlaviyoPush(payload: Map<String, String>) = payload.containsKey("_k")
+
     companion object {
         private const val CHANNEL_NAME = "com.rightbite.denisr/klaviyo"
     }
 }
 
-fun convertMapToSeralizedMap(map: Map<String, Any>): Map<String, Serializable> {
+private fun convertMapToSeralizedMap(map: Map<String, Any>): Map<String, Serializable> {
     val convertedMap = mutableMapOf<String, Serializable>()
-    
+
     for ((key, value) in map) {
         if (value is Serializable) {
             convertedMap[key] = value
@@ -196,6 +197,6 @@ fun convertMapToSeralizedMap(map: Map<String, Any>): Map<String, Serializable> {
             // depending on your requirements.
         }
     }
-    
+
     return convertedMap
 }
