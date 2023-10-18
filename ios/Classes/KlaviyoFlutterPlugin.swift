@@ -46,11 +46,11 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
   public func userNotificationCenter(_ center: UNUserNotificationCenter,
                                   willPresent notification: UNNotification,
                                   withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+     var options: UNNotificationPresentationOptions =  [.alert]
      if #available(iOS 14.0, *) {
-        completionHandler([.list, .banner])
-     } else {
-        completionHandler([.alert])
+       options = [.list, .banner]
      }
+     completionHandler(options)
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
