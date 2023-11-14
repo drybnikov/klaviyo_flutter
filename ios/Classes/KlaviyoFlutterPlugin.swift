@@ -109,8 +109,8 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
             properties: arguments["metaData"] as? [String: Any])
 
           klaviyo.create(event: event)
-          result("Event [\(event.uniqueId)] created")
-
+          result("Event: [\(event)] created")
+        
         case METHOD_HANDLE_PUSH:
           let arguments = call.arguments as! [String: Any]
 

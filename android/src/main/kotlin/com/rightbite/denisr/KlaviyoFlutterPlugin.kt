@@ -44,10 +44,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
             val app = applicationContext as Application
             app.registerActivityLifecycleCallbacks(Klaviyo.lifecycleCallbacks)
         } else {
-            Log.w(
-                TAG,
-                "Context $applicationContext was not an application, can't register for lifecycle callbacks. Some notification events may be dropped as a result."
-            )
+            Log.w(TAG, "Context $applicationContext was not an application, can't register for lifecycle callbacks. Some notification events may be dropped as a result.")
         }
     }
 
@@ -77,12 +74,12 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
             METHOD_UPDATE_PROFILE -> {
                 try {
                     val profilePropertiesRaw = call.arguments<Map<String, Any>?>()
-                        ?: throw RuntimeException("Profile properties not exist")
+                            ?: throw RuntimeException("Profile properties not exist")
 
                     var profileProperties = convertMapToSeralizedMap(profilePropertiesRaw)
 
                     val customProperties =
-                        profileProperties[PROFILE_PROPERTIES_KEY] as Map<String, Serializable>?
+                            profileProperties[PROFILE_PROPERTIES_KEY] as Map<String, Serializable>?
 
                     if (customProperties != null) {
                         // as Android Klaviyo SDK requests properties to be on same Map level
@@ -92,15 +89,15 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                     }
 
                     val profile = Profile(
-                        profileProperties.map { (key, value) ->
-                            ProfileKey.CUSTOM(key) to value
-                        }.toMap()
+                            profileProperties.map { (key, value) ->
+                                ProfileKey.CUSTOM(key) to value
+                            }.toMap()
                     )
 
                     Klaviyo.setProfile(profile)
                     Log.d(
-                        TAG,
-                        "Profile updated: ${Klaviyo.getExternalId()}, profileMap: $profileProperties"
+                            TAG,
+                            "Profile updated: ${Klaviyo.getExternalId()}, profileMap: $profileProperties"
                     )
 
 
@@ -112,23 +109,25 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
 
             METHOD_LOG_EVENT -> {
                 val eventName = call.argument<String>("name")
-                val metaData = call.argument<HashMap<String, String>>("metaData")
-                if (eventName != null) {
+                val metaDataRaw = call.argument<Map<String, Any>?>("metaData")
+
+                if (eventName != null && metaDataRaw != null) {
                     val event = Event(EventType.CUSTOM(eventName))
 
-                    metaData?.let { metaDataMap ->
-                        for (item in metaDataMap) {
-                            event.setProperty(key = item.key, value = item.value)
-                        }
+                    val metaData = convertMapToSeralizedMap(metaDataRaw)
+                    for (item in metaData) {
+                        event.setProperty(EventKey.CUSTOM(item.key), value = item.value)
                     }
                     Klaviyo.createEvent(event)
-                    result.success("Event[$eventName] created with metadata size: ${metaData?.size}")
+
+                    Log.d(TAG, "Event created: $event, type: ${event.type}, value:${event.value} eventMap: ${event.toMap()}")
+                    result.success("Event[$eventName] created with metadataMap: $metaData")
                 }
             }
 
             METHOD_HANDLE_PUSH -> {
                 val metaData =
-                    call.argument<HashMap<String, String>>("message") ?: emptyMap<String, String>()
+                        call.argument<HashMap<String, String>>("message") ?: emptyMap<String, String>()
 
                 if (isKlaviyoPush(metaData)) {
                     val event = Event(EventType.CUSTOM("\$opened_push"), metaData.mapKeys {
@@ -141,7 +140,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                         result.success(true)
                     } catch (e: Exception) {
                         Log.e(
-                            TAG, "Failed handle push metaData:$metaData. Cause: $e"
+                                TAG, "Failed handle push metaData:$metaData. Cause: $e"
                         )
                         result.error("Failed handle push metaData", e.message, null)
                     }
