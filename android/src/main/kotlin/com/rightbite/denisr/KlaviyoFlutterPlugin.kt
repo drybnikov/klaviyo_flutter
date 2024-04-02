@@ -5,7 +5,7 @@ import android.content.Context
 import com.klaviyo.analytics.Klaviyo
 import com.klaviyo.analytics.model.Event
 import com.klaviyo.analytics.model.EventKey
-import com.klaviyo.analytics.model.EventType
+import com.klaviyo.analytics.model.EventMetric
 import com.klaviyo.analytics.model.Profile
 import com.klaviyo.analytics.model.ProfileKey
 import io.flutter.Log
@@ -112,7 +112,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                 val metaDataRaw = call.argument<Map<String, Any>?>("metaData")
 
                 if (eventName != null && metaDataRaw != null) {
-                    val event = Event(EventType.CUSTOM(eventName))
+                    val event = Event(EventMetric.CUSTOM(eventName))
 
                     val metaData = convertMapToSeralizedMap(metaDataRaw)
                     for (item in metaData) {
@@ -120,7 +120,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                     }
                     Klaviyo.createEvent(event)
 
-                    Log.d(TAG, "Event created: $event, type: ${event.type}, value:${event.value} eventMap: ${event.toMap()}")
+                    Log.d(TAG, "Event created: $event, metric: ${event.metric}, value:${event.value} eventMap: ${event.toMap()}")
                     result.success("Event[$eventName] created with metadataMap: $metaData")
                 }
             }
@@ -130,7 +130,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                         call.argument<HashMap<String, String>>("message") ?: emptyMap<String, String>()
 
                 if (isKlaviyoPush(metaData)) {
-                    val event = Event(EventType.CUSTOM("\$opened_push"), metaData.mapKeys {
+                    val event = Event(EventMetric.CUSTOM("\$opened_push"), metaData.mapKeys {
                         EventKey.CUSTOM(it.key)
                     })
                     return try {
@@ -177,7 +177,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
         }
     }
 
-    private fun isKlaviyoPush(payload: Map<String, String>) = payload.containsKey("_k")
+    private fun isKlaviyoPush(payload: Map<String, String>) = payload.containsKey("com.klaviyo._k")
 
     companion object {
         private const val CHANNEL_NAME = "com.rightbite.denisr/klaviyo"
