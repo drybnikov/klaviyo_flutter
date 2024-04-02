@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0+13
+## 0.1.0
 
 * Updated Android SDK to 2.2.1, Updated iOS SDK to 3.0.4
 
