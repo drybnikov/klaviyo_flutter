@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0+13
+
+* Updated Android SDK to 2.2.1, Updated iOS SDK to 3.0.4
+
 ## 0.0.4+1
 
 * Improved sending events in Android and iOS
