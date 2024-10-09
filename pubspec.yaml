@@ -1,7 +1,7 @@
 name: klaviyo_flutter
 description: Flutter plugin for Klaviyo integration. Provides push messaging
   and Klaviyo analitics services
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/drybnikov/klaviyo_flutter
 
 environment:
