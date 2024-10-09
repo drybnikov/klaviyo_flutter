@@ -177,7 +177,7 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
         }
     }
 
-    private fun isKlaviyoPush(payload: Map<String, String>) = payload.containsKey("com.klaviyo._k")
+    private fun isKlaviyoPush(payload: Map<String, String>) = payload.containsKey("_k")
 
     companion object {
         private const val CHANNEL_NAME = "com.rightbite.denisr/klaviyo"
