@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+* Updated Android SDK to 3.0.0, Updated iOS SDK to 4.0.0
+
 ## 0.1.1
 
 * Use correct Klaviyo notification key for Android
