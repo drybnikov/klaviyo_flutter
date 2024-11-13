@@ -14,7 +14,7 @@ A new flutter plugin project.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
-  s.dependency 'KlaviyoSwift', '~> 3.0.4'
+  s.dependency 'KlaviyoSwift', '~> 4.0.0'
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
 end

@@ -40,12 +40,6 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
         applicationContext = binding.applicationContext
         channel = MethodChannel(binding.binaryMessenger, CHANNEL_NAME)
         channel.setMethodCallHandler(this)
-        if (applicationContext is Application) {
-            val app = applicationContext as Application
-            app.registerActivityLifecycleCallbacks(Klaviyo.lifecycleCallbacks)
-        } else {
-            Log.w(TAG, "Context $applicationContext was not an application, can't register for lifecycle callbacks. Some notification events may be dropped as a result.")
-        }
     }
 
     override fun onDetachedFromEngine(binding: FlutterPluginBinding) {

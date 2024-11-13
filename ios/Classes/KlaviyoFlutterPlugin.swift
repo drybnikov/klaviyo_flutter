@@ -114,7 +114,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
         case METHOD_LOG_EVENT:
           let arguments = call.arguments as! [String: Any]
           let event = Event(
-            name: Event.EventName.CustomEvent(arguments["name"] as! String),
+            name: .customEvent(arguments["name"] as! String),
             properties: arguments["metaData"] as? [String: Any])
 
           klaviyo.create(event: event)
@@ -125,7 +125,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
 
           if let properties = arguments["message"] as? [String: Any],
             let _ = properties["_k"] {
-              klaviyo.create(event: Event(name: .OpenedPush, properties: properties))
+              klaviyo.create(event: Event(name: .customEvent("$opened_push"), properties: properties))
 
               return result(true)
           }

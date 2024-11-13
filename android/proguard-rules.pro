@@ -1,0 +1,3 @@
+-keep class com.klaviyo.analytics.** { *; }
+-keep class com.klaviyo.core.** { *; }
+-keep class com.klaviyo.push-fcm.** { *; }
