@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+* Added Namespace declaration for Android Gradle Plugin compatibility, thanks @Codel1417
+
 ## 0.1.2
 
 * Updated Android SDK to 3.0.0, Updated iOS SDK to 4.0.0
