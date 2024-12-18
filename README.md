@@ -26,7 +26,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // initialize the Klaviyo.
   // make sure to add key from your Klaviyo account public API.
-  await await Klaviyo.instance.initialize('apiKeyHere');
+  await Klaviyo.instance.initialize('apiKeyHere');
   runApp(App());
 }
 
