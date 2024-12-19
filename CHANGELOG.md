@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+* Update project to support Android SDK 35 and tooling, thanks @sn1cka
+
 ## 0.1.3
 
 * Added Namespace declaration for Android Gradle Plugin compatibility, thanks @Codel1417
