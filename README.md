@@ -2,6 +2,9 @@
 
 [![Pub](https://img.shields.io/pub/v/klaviyo_flutter.svg)](https://pub.dev/packages/klaviyo_flutter)
 ![CI](https://github.com/drybnikov/klaviyo_flutter/workflows/CI/badge.svg)
+![](https://img.shields.io/coderabbit/prs/github/drybnikov/klaviyo_flutter?label=CodeRabbit)
+
+
 
 Flutter wrapper for Klaviyo [Android](https://github.com/klaviyo/klaviyo-android-sdk),
 and [iOS](https://github.com/klaviyo/klaviyo-swift-sdk) projects.
