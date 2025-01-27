@@ -55,7 +55,6 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'com.github.Musharaf13:klaviyo-android-sdk-analytics:master-SNAPSHOT'
-    implementation 'com.github.Musharaf13:klaviyo-android-sdk-push-fcm:master-SNAPSHOT'
+    implementation 'com.github.Musharaf13:klaviyo-android-sdk:master-SNAPSHOT'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.4.1'
 }
