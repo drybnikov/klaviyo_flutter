@@ -56,7 +56,7 @@ class Klaviyo {
   /// @param [profileMap] A map-like object representing properties of the new user
   /// @return Returns Future<String> success when called on Android or iOS
   ///
-  /// All profile attributes recognised by the Klaviyo APIs [com.klaviyo.analytics.model.ProfileKey]
+  /// All profile attributes recognized by the Klaviyo APIs [com.klaviyo.analytics.model.ProfileKey]
   Future<String> updateProfile(KlaviyoProfile profileModel) async {
     return KlaviyoFlutterPlatform.instance.updateProfile(profileModel);
   }
