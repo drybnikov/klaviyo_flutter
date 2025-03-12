@@ -88,6 +88,16 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
     throw UnimplementedError('handlePush() has not been implemented.');
   }
 
+  /// {@template klaviyo_flutter_platform.setExternalId}
+  /// Set the external ID of the currently tracked profile.
+  ///
+  /// Usually should be called on the user authorization and accept your
+  /// system's user ID
+  /// {@endtemplate}
+  Future<void> setExternalId(String id) async {
+    throw UnimplementedError('setExternalId() has not been implemented');
+  }
+
   /// @return The external ID of the currently tracked profile, if set
   Future<String?> getExternalId() async {
     throw UnimplementedError('getExternalId() has not been implemented.');

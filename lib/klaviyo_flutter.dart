@@ -72,6 +72,10 @@ class Klaviyo {
   /// Check if the push [message] is for Klaviyo
   bool isKlaviyoPush(Map<String, dynamic> message) => message.containsKey('_k');
 
+  /// {@macro klaviyo_flutter_platform.setExternalId}
+  Future<void> setExternalId(String id) =>
+      KlaviyoFlutterPlatform.instance.setExternalId(id);
+
   /// @return The external ID of the currently tracked profile, if set
   Future<String?> getExternalId() =>
       KlaviyoFlutterPlatform.instance.getExternalId();

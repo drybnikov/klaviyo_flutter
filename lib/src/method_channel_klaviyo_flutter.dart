@@ -56,6 +56,11 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
   }
 
   @override
+  Future<void> setExternalId(String id) {
+    return _channel.invokeMethod('setExternalId', {'id': id});
+  }
+
+  @override
   Future<String?> getExternalId() {
     return _channel.invokeMethod('getExternalId');
   }

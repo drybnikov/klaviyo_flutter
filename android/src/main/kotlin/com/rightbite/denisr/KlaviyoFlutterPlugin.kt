@@ -21,6 +21,7 @@ private const val METHOD_INITIALIZE = "initialize"
 private const val METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
 private const val METHOD_LOG_EVENT = "logEvent"
 private const val METHOD_HANDLE_PUSH = "handlePush"
+private const val METHOD_SET_EXTERNAL_ID = "setExternalId"
 private const val METHOD_GET_EXTERNAL_ID = "getExternalId"
 private const val METHOD_RESET_PROFILE = "resetProfile"
 private const val METHOD_SET_EMAIL = "setEmail"
@@ -141,6 +142,13 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                 } else {
                     return result.success(false)
                 }
+            }
+
+            METHOD_SET_EXTERNAL_ID -> {
+                val id: String = call.argument<String>("id")
+                    ?: return result.error("Bad Request", "ID should not be null", null)
+                Klaviyo.setExternalId(id)
+                return result.success(null)
             }
 
             METHOD_GET_EXTERNAL_ID -> result.success(Klaviyo.getExternalId())
