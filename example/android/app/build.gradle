@@ -8,7 +8,6 @@ plugins {
 android {
     namespace = "com.rightbite.denisr.klaviyoexample"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
