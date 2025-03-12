@@ -18,7 +18,7 @@ echo "mkdir -p ${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
 COCOAPODS_PARALLEL_CODE_SIGN="${COCOAPODS_PARALLEL_CODE_SIGN:-false}"
-SWIFT_STDLIB_PATH="${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
+SWIFT_STDLIB_PATH="${TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}"
 BCSYMBOLMAP_DIR="BCSymbolMaps"
 
 
@@ -177,16 +177,19 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AnyCodable-FlightSchool/AnyCodable.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KlaviyoCore/KlaviyoCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KlaviyoSwift/KlaviyoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/klaviyo_flutter/klaviyo_flutter.framework"
 fi
 if [[ "$CONFIGURATION" == "Profile" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AnyCodable-FlightSchool/AnyCodable.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KlaviyoCore/KlaviyoCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KlaviyoSwift/KlaviyoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/klaviyo_flutter/klaviyo_flutter.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AnyCodable-FlightSchool/AnyCodable.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KlaviyoCore/KlaviyoCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KlaviyoSwift/KlaviyoSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/klaviyo_flutter/klaviyo_flutter.framework"
 fi

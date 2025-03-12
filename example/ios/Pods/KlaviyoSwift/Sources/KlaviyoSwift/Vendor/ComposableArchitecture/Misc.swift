@@ -51,7 +51,7 @@ final class Box<Wrapped> {
 @inline(__always)
 func runtimeWarn(
   _ message: @autoclosure () -> String,
-  category: String? = "ComposableArchitecture",
+  category: String? = "",
   file: StaticString? = nil,
   line: UInt? = nil
 ) {

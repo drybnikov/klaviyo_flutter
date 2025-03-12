@@ -1,6 +1,6 @@
 {
   "name": "klaviyo_flutter",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "summary": "Klaviyo integration for Flutter",
   "description": "A new flutter plugin project.",
   "homepage": "https://github.com/drybnikov/klaviyo_flutter",
@@ -15,11 +15,9 @@
   },
   "source_files": "Classes/**/*",
   "dependencies": {
-    "Flutter": [
-
-    ],
+    "Flutter": [],
     "KlaviyoSwift": [
-
+      "~> 4.0.0"
     ]
   },
   "platforms": {
