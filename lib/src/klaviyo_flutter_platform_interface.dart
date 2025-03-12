@@ -57,7 +57,7 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
   /// @param [profileMap] A map-like object representing properties of the new user
   /// @return Returns Future<String> success when called on Android or iOS
   ///
-  /// All profile attributes recognised by the Klaviyo APIs [com.klaviyo.analytics.model.ProfileKey]
+  /// All profile attributes recognized by the Klaviyo APIs [com.klaviyo.analytics.model.ProfileKey]
   //     object EXTERNAL_ID : ProfileKey("external_id")
   //     object EMAIL : ProfileKey("email")
   //     object PHONE_NUMBER : ProfileKey("phone_number")
