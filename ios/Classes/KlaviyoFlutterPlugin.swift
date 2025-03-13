@@ -11,9 +11,9 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
   private let METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
   private let METHOD_LOG_EVENT = "logEvent"
   private let METHOD_HANDLE_PUSH = "handlePush"
+  private let METHOD_SET_EXTERNAL_ID = "setExternalId"
   private let METHOD_GET_EXTERNAL_ID = "getExternalId"
   private let METHOD_RESET_PROFILE = "resetProfile"
-
   private let METHOD_SET_EMAIL = "setEmail"
   private let METHOD_GET_EMAIL = "getEmail"
   private let METHOD_SET_PHONE_NUMBER = "setPhoneNumber"
@@ -143,6 +143,11 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
 
         case METHOD_GET_PHONE_NUMBER:
           result(klaviyo.phoneNumber)
+        
+        case METHOD_SET_EXTERNAL_ID:
+          let arguments = call.arguments as! [String: Any]
+          klaviyo.set(externalId: arguments["id"] as! String)
+          result("ID updated")
 
         case METHOD_SET_EMAIL:
           let arguments = call.arguments as! [String: Any]
