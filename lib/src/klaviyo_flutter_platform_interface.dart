@@ -145,4 +145,109 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
   Future<String?> getPhoneNumber() async {
     throw UnimplementedError('getPhoneNumber() has not been implemented.');
   }
+
+  /// {@template klaviyo_flutter_platform.setFirstName}
+  /// Assigns a first name to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setFirstName(String firstName) async {
+    throw UnimplementedError('setFirstName() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setLastName}
+  /// Assigns a last name to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setLastName(String lastName) async {
+    throw UnimplementedError('setLastName() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setTitle}
+  /// Assigns a title to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setTitle(String title) async {
+    throw UnimplementedError('setTitle() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setOrganization}
+  /// Assigns an organization to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setOrganization(String organization) async {
+    throw UnimplementedError('setOrganization() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setImage}
+  /// Assigns an image to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setImage(String image) async {
+    throw UnimplementedError('setImage() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setAddress1}
+  /// Assigns an address1 to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setAddress1(String address) async {
+    throw UnimplementedError('setAddress1() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setAddress2}
+  /// Assigns an address2 to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setAddress2(String address) async {
+    throw UnimplementedError('setAddress2() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setCity}
+  /// Assigns a city to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setCity(String city) async {
+    throw UnimplementedError('setCity() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setCountry}
+  /// Assigns a country to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setCountry(String country) async {
+    throw UnimplementedError('setCountry() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setLatitude}
+  /// Assigns a latitude to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setLatitude(double latitude) async {
+    throw UnimplementedError('setLatitude() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setLongitude}
+  /// Assigns a longitude to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setLongitude(double longitude) async {
+    throw UnimplementedError('setLongitude() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setRegion}
+  /// Assigns a region to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setRegion(String region) async {
+    throw UnimplementedError('setRegion() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setZip}
+  /// Assigns a zip to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setZip(String zip) async {
+    throw UnimplementedError('setZip() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setTimezone}
+  /// Assigns a timezone to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setTimezone(String timezone) async {
+    throw UnimplementedError('setTimezone() has not been implemented.');
+  }
+
+  /// {@template klaviyo_flutter_platform.setCustomAttribute}
+  /// Assigns a custom attribute to the currently tracked Klaviyo profile
+  /// {@endtemplate}
+  Future<void> setCustomAttribute(String key, String value) async {
+    throw UnimplementedError('setCustomAttribute() has not been implemented.');
+  }
 }
