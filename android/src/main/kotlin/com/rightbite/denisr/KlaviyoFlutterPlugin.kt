@@ -21,12 +21,28 @@ private const val METHOD_INITIALIZE = "initialize"
 private const val METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
 private const val METHOD_LOG_EVENT = "logEvent"
 private const val METHOD_HANDLE_PUSH = "handlePush"
+private const val METHOD_SET_EXTERNAL_ID = "setExternalId"
 private const val METHOD_GET_EXTERNAL_ID = "getExternalId"
 private const val METHOD_RESET_PROFILE = "resetProfile"
 private const val METHOD_SET_EMAIL = "setEmail"
 private const val METHOD_GET_EMAIL = "getEmail"
 private const val METHOD_SET_PHONE_NUMBER = "setPhoneNumber"
 private const val METHOD_GET_PHONE_NUMBER = "getPhoneNumber"
+private const val METHOD_SET_FIRST_NAME = "setFirstName"
+private const val METHOD_SET_LAST_NAME = "setLastName"
+private const val METHOD_SET_ORGANIZATION = "setOrganization"
+private const val METHOD_SET_TITLE = "setTitle"
+private const val METHOD_SET_IMAGE = "setImage"
+private const val METHOD_SET_ADDRESS1 = "setAddress1"
+private const val METHOD_SET_ADDRESS2 = "setAddress2"
+private const val METHOD_SET_CITY = "setCity"
+private const val METHOD_SET_COUNTRY = "setCountry"
+private const val METHOD_SET_LATITUDE = "setLatitude"
+private const val METHOD_SET_LONGITUDE = "setLongitude"
+private const val METHOD_SET_REGION = "setRegion"
+private const val METHOD_SET_ZIP = "setZip"
+private const val METHOD_SET_TIMEZONE = "setTimezone"
+private const val METHOD_SET_CUSTOM_ATTRIBUTE = "setCustomAttribute"
 
 private const val PROFILE_PROPERTIES_KEY = "properties"
 
@@ -47,7 +63,25 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
         channel.setMethodCallHandler(null)
     }
 
+
+
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
+        fun setProfileAttribute(key: ProfileKey, name: String, argumentKey: String) {
+            try {
+                val value: String = call.argument<String>(argumentKey)
+                    ?: return result.error("Bad Request", "$name should not be null", null)
+                Klaviyo.setProfileAttribute(
+                    propertyKey = key,
+                    value = value,
+                )
+                Log.i(TAG, "$name updated")
+                return result.success("$name updated")
+            } catch (e: Exception) {
+                return result.error("Set profile attribute error", e.message, e)
+            }
+
+        }
+
         when (call.method) {
             METHOD_INITIALIZE -> {
                 val apiKey = call.argument<String>("apiKey")
@@ -143,6 +177,13 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                 }
             }
 
+            METHOD_SET_EXTERNAL_ID -> {
+                val id: String = call.argument<String>("id")
+                    ?: return result.error("Bad Request", "ID should not be null", null)
+                Klaviyo.setExternalId(id)
+                return result.success(null)
+            }
+
             METHOD_GET_EXTERNAL_ID -> result.success(Klaviyo.getExternalId())
 
             METHOD_RESET_PROFILE -> {
@@ -166,6 +207,72 @@ class KlaviyoFlutterPlugin : MethodCallHandler, FlutterPlugin {
                     result.success("Phone number updated")
                 }
             }
+
+            METHOD_SET_FIRST_NAME -> {
+                setProfileAttribute(ProfileKey.FIRST_NAME, "First name", "firstName")
+            }
+
+            METHOD_SET_LAST_NAME -> {
+                setProfileAttribute(ProfileKey.LAST_NAME, "Last name", "lastName")
+            }
+
+            METHOD_SET_ORGANIZATION -> {
+                setProfileAttribute(ProfileKey.ORGANIZATION, "Organization", "organization")
+            }
+
+            METHOD_SET_TITLE -> {
+                setProfileAttribute(ProfileKey.TITLE, "Title", "title")
+            }
+
+            METHOD_SET_IMAGE -> {
+                setProfileAttribute(ProfileKey.IMAGE, "Image", "image")
+            }
+
+            METHOD_SET_ADDRESS1 -> {
+                setProfileAttribute(ProfileKey.ADDRESS1, "Address 1", "address")
+            }
+
+            METHOD_SET_ADDRESS2 -> {
+                setProfileAttribute(ProfileKey.ADDRESS2, "Address 2", "address")
+            }
+
+            METHOD_SET_CITY -> {
+                setProfileAttribute(ProfileKey.CITY, "City", "city")
+            }
+
+            METHOD_SET_COUNTRY -> {
+                setProfileAttribute(ProfileKey.COUNTRY, "Country", "country")
+            }
+
+            METHOD_SET_LATITUDE -> {
+                setProfileAttribute(ProfileKey.LATITUDE, "Latitude", "latitude")
+            }
+
+            METHOD_SET_LONGITUDE -> {
+                setProfileAttribute(ProfileKey.LONGITUDE, "Longitude", "longitude")
+            }
+
+            METHOD_SET_REGION -> {
+                setProfileAttribute(ProfileKey.REGION, "Region", "region")
+            }
+
+            METHOD_SET_ZIP -> {
+                setProfileAttribute(ProfileKey.ZIP, "Zip", "zip")
+            }
+
+            METHOD_SET_TIMEZONE -> {
+                setProfileAttribute(ProfileKey.TIMEZONE, "Timezone", "timezone")
+            }
+
+            METHOD_SET_CUSTOM_ATTRIBUTE -> {
+                val key: String = call.argument<String>("key")
+                    ?: return result.error("Bad Request", "Key must not be null", null)
+                val value: String = call.argument<String>("value")
+                    ?: return result.error("Bad Request", "Value must not be null", null)
+                Klaviyo.setProfileAttribute(propertyKey = ProfileKey.CUSTOM(key), value)
+                return result.success("Attribute '$key' updated")
+            }
+
 
             else -> result.notImplemented()
         }

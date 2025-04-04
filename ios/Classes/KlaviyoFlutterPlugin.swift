@@ -11,13 +11,28 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
   private let METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
   private let METHOD_LOG_EVENT = "logEvent"
   private let METHOD_HANDLE_PUSH = "handlePush"
+  private let METHOD_SET_EXTERNAL_ID = "setExternalId"
   private let METHOD_GET_EXTERNAL_ID = "getExternalId"
   private let METHOD_RESET_PROFILE = "resetProfile"
-
   private let METHOD_SET_EMAIL = "setEmail"
   private let METHOD_GET_EMAIL = "getEmail"
   private let METHOD_SET_PHONE_NUMBER = "setPhoneNumber"
   private let METHOD_GET_PHONE_NUMBER = "getPhoneNumber"
+  private let METHOD_SET_FIRST_NAME = "setFirstName"
+  private let METHOD_SET_LAST_NAME = "setLastName"
+  private let METHOD_SET_ORGANIZATION = "setOrganization"
+  private let METHOD_SET_TITLE = "setTitle"
+  private let METHOD_SET_IMAGE = "setImage"
+  private let METHOD_SET_ADDRESS1 = "setAddress1"
+  private let METHOD_SET_ADDRESS2 = "setAddress2"
+  private let METHOD_SET_CITY = "setCity"
+  private let METHOD_SET_COUNTRY = "setCountry"
+  private let METHOD_SET_LATITUDE = "setLatitude"
+  private let METHOD_SET_LONGITUDE = "setLongitude"
+  private let METHOD_SET_REGION = "setRegion"
+  private let METHOD_SET_ZIP = "setZip"
+  private let METHOD_SET_TIMEZONE = "setTimezone"
+  private let METHOD_SET_CUSTOM_ATTRIBUTE = "setCustomAttribute"
 
   private let klaviyo = KlaviyoSDK()
 
@@ -63,6 +78,11 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    func setProfileAttribute(key: Profile.ProfileKey, name: String, argumentKey: String) {
+        let arguments = call.arguments as! [String: Any]
+        klaviyo.set(profileAttribute: key, value: arguments[argumentKey] as! String)
+        result("\(name) updated")
+    }
     switch call.method {
         case METHOD_INITIALIZE:
           let arguments = call.arguments as! [String: Any]
@@ -143,6 +163,11 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
 
         case METHOD_GET_PHONE_NUMBER:
           result(klaviyo.phoneNumber)
+        
+        case METHOD_SET_EXTERNAL_ID:
+          let arguments = call.arguments as! [String: Any]
+          klaviyo.set(externalId: arguments["id"] as! String)
+          result("ID updated")
 
         case METHOD_SET_EMAIL:
           let arguments = call.arguments as! [String: Any]
@@ -153,6 +178,56 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
           let arguments = call.arguments as! [String: Any]
           klaviyo.set(phoneNumber: arguments["phoneNumber"] as! String)
           result("Phone updated")
+        
+        case METHOD_SET_FIRST_NAME:
+          setProfileAttribute(key: .firstName, name: "First name", argumentKey: "firstName")
+        
+        case METHOD_SET_LAST_NAME:
+          setProfileAttribute(key: .lastName, name: "Last name", argumentKey: "lastName")
+        
+        case METHOD_SET_TITLE:
+          setProfileAttribute(key: .title, name: "Title", argumentKey: "title")
+        
+        case METHOD_SET_ORGANIZATION:
+          setProfileAttribute(key: .organization, name: "Organization", argumentKey: "organization")
+        
+        case METHOD_SET_IMAGE:
+          setProfileAttribute(key: .image, name: "Image", argumentKey: "image")
+        
+        case METHOD_SET_ADDRESS1:
+          setProfileAttribute(key: .address1, name: "Address 1", argumentKey: "address")
+        
+        case METHOD_SET_ADDRESS2:
+          setProfileAttribute(key: .address2, name: "Address 2", argumentKey: "address")
+        
+        case METHOD_SET_CITY:
+          setProfileAttribute(key: .city, name: "City", argumentKey: "city")
+        
+        case METHOD_SET_COUNTRY:
+          setProfileAttribute(key: .country, name: "Country", argumentKey: "country")
+        
+        case METHOD_SET_LATITUDE:
+          setProfileAttribute(key: .latitude, name: "Latitude", argumentKey: "latitude")
+        
+        case METHOD_SET_LONGITUDE:
+          setProfileAttribute(key: .longitude, name: "Longitude", argumentKey: "longitude")
+        
+        case METHOD_SET_REGION:
+          setProfileAttribute(key: .region, name: "Region", argumentKey: "region")
+        
+        case METHOD_SET_ZIP:
+          setProfileAttribute(key: .zip, name: "Zip", argumentKey: "zip")
+        
+        case METHOD_SET_TIMEZONE:
+          // Klaviyo takes timezone from environment on iOS
+          result("Success")
+        
+        case METHOD_SET_CUSTOM_ATTRIBUTE:
+          let arguments = call.arguments as! [String: Any]
+          let key = arguments["key"] as! String;
+          let value = arguments["value"] as! String;
+          klaviyo.set(profileAttribute: .custom(customKey: key), value: value)
+          result("Attribute \(key) updated")
 
         default:
           result(FlutterMethodNotImplemented)

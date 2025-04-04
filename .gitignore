@@ -7,6 +7,7 @@ pubspec.lock
 
 build/
 .idea/
+.vscode/
 android/bin/
 example/.flutter-plugins-dependencies
 example/.flutter-plugins
