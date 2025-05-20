@@ -97,32 +97,85 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             name: String,
             argumentKey: String
         ) {
-            let arguments = call.arguments as! [String: Any]
-            klaviyo.set(
-                profileAttribute: key,
-                value: arguments[argumentKey] as! String
-            )
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let stringValue = arguments[argumentKey] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "\(name) must be a non-null String",
+                        details: nil
+                    )
+                )
+            }
+            klaviyo.set(profileAttribute: key, value: stringValue)
             result("\(name) updated")
         }
+
         switch call.method {
         case METHOD_INITIALIZE:
-            let arguments = call.arguments as! [String: Any]
-            klaviyo.initialize(with: arguments["apiKey"] as! String)
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let apiKey = arguments["apiKey"] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "API key must be provided",
+                        details: nil
+                    )
+                )
+            }
+            klaviyo.initialize(with: apiKey)
             result("Klaviyo initialized")
 
         case METHOD_SEND_TOKEN:
-            let arguments = call.arguments as! [String: Any]
-            let tokenData = arguments["token"] as! String
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let tokenData = arguments["token"] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "Token must be provided",
+                        details: nil
+                    )
+                )
+            }
             klaviyo.set(pushToken: Data(hexString: tokenData))
             result("Token sent to Klaviyo")
-            
+
         case METHOD_SET_BADGE_COUNT:
-            let arguments = call.arguments as! [String: Any]
-            klaviyo.setBadgeCount(arguments["count"] as! Int)
-            result("Badge count set")
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let count = arguments["count"] as? Int
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "count must be an Int",
+                        details: nil
+                    )
+                )
+            }
+            DispatchQueue.main.async {
+                self.klaviyo.setBadgeCount(count)
+                result("Badge count set")
+            }
 
         case METHOD_UPDATE_PROFILE:
-            let arguments = call.arguments as! [String: Any]
+            guard
+                let arguments = call.arguments as? [String: Any]
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "Profile must be provided",
+                        details: nil
+                    )
+                )
+            }
             // parsing location
             let address1 = arguments["address1"] as? String
             let address2 = arguments["address2"] as? String
@@ -160,9 +213,20 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             result("Profile updated")
 
         case METHOD_LOG_EVENT:
-            let arguments = call.arguments as! [String: Any]
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let eventName = arguments["name"] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "Event name must be provided",
+                        details: nil
+                    )
+                )
+            }
             let event = Event(
-                name: .customEvent(arguments["name"] as! String),
+                name: .customEvent(eventName),
                 properties: arguments["metaData"] as? [String: Any]
             )
 
@@ -170,7 +234,17 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             result("Event: [\(event)] created")
 
         case METHOD_HANDLE_PUSH:
-            let arguments = call.arguments as! [String: Any]
+            guard
+                let arguments = call.arguments as? [String: Any]
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "Push message must be provided",
+                        details: nil
+                    )
+                )
+            }
 
             if let properties = arguments["message"] as? [String: Any],
                 properties["_k"] != nil
@@ -200,18 +274,53 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             result(klaviyo.phoneNumber)
 
         case METHOD_SET_EXTERNAL_ID:
-            let arguments = call.arguments as! [String: Any]
-            klaviyo.set(externalId: arguments["id"] as! String)
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let externalId = arguments["id"] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "External ID must be provided",
+                        details: nil
+                    )
+                )
+            }
+            klaviyo.set(externalId: externalId)
             result("ID updated")
 
         case METHOD_SET_EMAIL:
-            let arguments = call.arguments as! [String: Any]
-            klaviyo.set(email: arguments["email"] as! String)
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let email = arguments["email"] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "Email must be provided",
+                        details: nil
+                    )
+                )
+            }
+
+            klaviyo.set(email: email)
             result("Email updated")
 
         case METHOD_SET_PHONE_NUMBER:
-            let arguments = call.arguments as! [String: Any]
-            klaviyo.set(phoneNumber: arguments["phoneNumber"] as! String)
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let phoneNumber = arguments["phoneNumber"] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "Phone number must be provided",
+                        details: nil
+                    )
+                )
+            }
+
+            klaviyo.set(phoneNumber: phoneNumber)
             result("Phone updated")
 
         case METHOD_SET_FIRST_NAME:
@@ -302,9 +411,19 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             result("Success")
 
         case METHOD_SET_CUSTOM_ATTRIBUTE:
-            let arguments = call.arguments as! [String: Any]
-            let key = arguments["key"] as! String
-            let value = arguments["value"] as! String
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let key = arguments["key"] as? String,
+                let value = arguments["value"] as? String
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "Method setCustomAttribute requires arguments {key: String, value: String}",
+                        details: nil
+                    )
+                )
+            }
             klaviyo.set(profileAttribute: .custom(customKey: key), value: value)
             result("Attribute \(key) updated")
 
