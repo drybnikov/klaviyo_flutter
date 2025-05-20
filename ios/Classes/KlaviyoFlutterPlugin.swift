@@ -51,12 +51,6 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin, UNUserNotificationCe
 
   // below method will be called when the user interacts with the push notification
   public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-    // decrement the badge count on the app icon
-    if #available(iOS 16.0, *) {
-        UNUserNotificationCenter.current().setBadgeCount(UIApplication.shared.applicationIconBadgeNumber - 1)
-    } else {
-        UIApplication.shared.applicationIconBadgeNumber -= 1
-    }
 
     // If this notification is Klaviyo's notification we'll handle it
     // else pass it on to the next push notification service to which it may belong
