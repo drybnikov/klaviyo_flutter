@@ -182,4 +182,8 @@ class Klaviyo {
   /// {@macro klaviyo_flutter_platform.setCustomAttribute}
   Future<void> setCustomAttribute(String key, String value) =>
       KlaviyoFlutterPlatform.instance.setCustomAttribute(key, value);
+
+  /// {@macro klaviyo_flutter_platform.setBadgeCount}
+  Future<void> setBadgeCount(int count) =>
+      KlaviyoFlutterPlatform.instance.setBadgeCount(count);
 }

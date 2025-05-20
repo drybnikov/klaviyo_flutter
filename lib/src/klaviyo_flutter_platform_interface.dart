@@ -250,4 +250,23 @@ abstract class KlaviyoFlutterPlatform extends PlatformInterface {
   Future<void> setCustomAttribute(String key, String value) async {
     throw UnimplementedError('setCustomAttribute() has not been implemented.');
   }
+
+  /// {@template klaviyo_flutter_platform.setBadgeCount}
+  /// iOS only.
+  /// Sets the app icon badge to the given count.
+  ///
+  /// [count] The number to set the badge to, or 0 to remove the badge.
+  /// Can't be negative.
+  ///
+  /// Klaviyo SDK will automatically handle the badge count associated with
+  /// Klaviyo pushes. If you need to manually update the badge count to account
+  /// for other notification sources, use this method, which will update the
+  /// badge count and keep it in sync with the Klaviyo SDK.
+  ///
+  /// The reason for this is because Klaviyo SDK stores it's own count in local
+  /// storage.
+  /// {@endtemplate}
+  Future<void> setBadgeCount(int count) async {
+    throw UnimplementedError('setBadgeCount() has not been implemented.');
+  }
 }
