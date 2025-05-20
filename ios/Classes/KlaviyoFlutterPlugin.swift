@@ -11,6 +11,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
     private let METHOD_UPDATE_PROFILE = "updateProfile"
     private let METHOD_INITIALIZE = "initialize"
     private let METHOD_SEND_TOKEN = "sendTokenToKlaviyo"
+    private let METHOD_SET_BADGE_COUNT = "setBadgeCount"
     private let METHOD_LOG_EVENT = "logEvent"
     private let METHOD_HANDLE_PUSH = "handlePush"
     private let METHOD_SET_EXTERNAL_ID = "setExternalId"
@@ -114,6 +115,11 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             let tokenData = arguments["token"] as! String
             klaviyo.set(pushToken: Data(hexString: tokenData))
             result("Token sent to Klaviyo")
+            
+        case METHOD_SET_BADGE_COUNT:
+            let arguments = call.arguments as! [String: Any]
+            klaviyo.setBadgeCount(arguments["count"] as! Int)
+            result("Badge count set")
 
         case METHOD_UPDATE_PROFILE:
             let arguments = call.arguments as! [String: Any]

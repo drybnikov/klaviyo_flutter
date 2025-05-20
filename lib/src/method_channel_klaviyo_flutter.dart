@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:flutter/services.dart';
 
@@ -141,4 +142,14 @@ class MethodChannelKlaviyoFlutter extends KlaviyoFlutterPlatform {
   @override
   Future<void> setCustomAttribute(String key, String value) =>
       _channel.invokeMethod('setCustomAttribute', {'key': key, 'value': value});
+
+  @override
+  Future<void> setBadgeCount(int count) async {
+    assert(count >= 0);
+    if (Platform.isIOS) {
+      _channel.invokeMethod('setBadgeCount', {'count': count});
+    } else {
+      log('KlaviyoFlutterPlatform: setBadgeCount() is only supported on iOS');
+    }
+  }
 }
