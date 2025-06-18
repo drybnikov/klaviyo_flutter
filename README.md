@@ -9,7 +9,7 @@
 Flutter wrapper for Klaviyo [Android](https://github.com/klaviyo/klaviyo-android-sdk),
 and [iOS](https://github.com/klaviyo/klaviyo-swift-sdk) projects.
 
-- Uses Klaviyo Android SDK Version `3.0.0`.
+- Uses Klaviyo Android SDK Version `3.0.3`.
 - The minimum Android SDK `minSdkVersion` required is 23.
 - Uses Klaviyo iOS SDK Version `4.0.0`.
 - The minimum iOS target version required is 13.
