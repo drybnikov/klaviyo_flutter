@@ -56,7 +56,7 @@ class Klaviyo {
   /// @param [profileMap] A map-like object representing properties of the new user
   /// @return Returns Future<String> success when called on Android or iOS
   ///
-  /// All profile attributes recognised by the Klaviyo APIs [com.klaviyo.analytics.model.ProfileKey]
+  /// All profile attributes recognized by the Klaviyo APIs [com.klaviyo.analytics.model.ProfileKey]
   Future<String> updateProfile(KlaviyoProfile profileModel) async {
     return KlaviyoFlutterPlatform.instance.updateProfile(profileModel);
   }
@@ -71,6 +71,10 @@ class Klaviyo {
 
   /// Check if the push [message] is for Klaviyo
   bool isKlaviyoPush(Map<String, dynamic> message) => message.containsKey('_k');
+
+  /// {@macro klaviyo_flutter_platform.setExternalId}
+  Future<void> setExternalId(String id) =>
+      KlaviyoFlutterPlatform.instance.setExternalId(id);
 
   /// @return The external ID of the currently tracked profile, if set
   Future<String?> getExternalId() =>
@@ -118,4 +122,68 @@ class Klaviyo {
   /// @return The phone number of the currently tracked profile, if set
   Future<String?> getPhoneNumber() =>
       KlaviyoFlutterPlatform.instance.getPhoneNumber();
+
+  /// {@macro klaviyo_flutter_platform.setFirstName}
+  Future<void> setFirstName(String firstName) =>
+      KlaviyoFlutterPlatform.instance.setFirstName(firstName);
+
+  /// {@macro klaviyo_flutter_platform.setLastName}
+  Future<void> setLastName(String lastName) =>
+      KlaviyoFlutterPlatform.instance.setLastName(lastName);
+
+  /// {@macro klaviyo_flutter_platform.setOrganization}
+  Future<void> setOrganization(String organization) =>
+      KlaviyoFlutterPlatform.instance.setOrganization(organization);
+
+  /// {@macro klaviyo_flutter_platform.setTitle}
+  Future<void> setTitle(String title) =>
+      KlaviyoFlutterPlatform.instance.setTitle(title);
+
+  /// {@macro klaviyo_flutter_platform.setImage}
+  Future<void> setImage(String image) =>
+      KlaviyoFlutterPlatform.instance.setImage(image);
+
+  /// {@macro klaviyo_flutter_platform.setAddress1}
+  Future<void> setAddress1(String address) =>
+      KlaviyoFlutterPlatform.instance.setAddress1(address);
+
+  /// {@macro klaviyo_flutter_platform.setAddress2}
+  Future<void> setAddress2(String address) =>
+      KlaviyoFlutterPlatform.instance.setAddress2(address);
+
+  /// {@macro klaviyo_flutter_platform.setCity}
+  Future<void> setCity(String city) =>
+      KlaviyoFlutterPlatform.instance.setCity(city);
+
+  /// {@macro klaviyo_flutter_platform.setCountry}
+  Future<void> setCountry(String country) =>
+      KlaviyoFlutterPlatform.instance.setCountry(country);
+
+  /// {@macro klaviyo_flutter_platform.setLatitude}
+  Future<void> setLatitude(double latitude) =>
+      KlaviyoFlutterPlatform.instance.setLatitude(latitude);
+
+  /// {@macro klaviyo_flutter_platform.setLongitude}
+  Future<void> setLongitude(double longitude) =>
+      KlaviyoFlutterPlatform.instance.setLongitude(longitude);
+
+  /// {@macro klaviyo_flutter_platform.setRegion}
+  Future<void> setRegion(String region) =>
+      KlaviyoFlutterPlatform.instance.setRegion(region);
+
+  /// {@macro klaviyo_flutter_platform.setZip}
+  Future<void> setZip(String zip) =>
+      KlaviyoFlutterPlatform.instance.setZip(zip);
+
+  /// {@macro klaviyo_flutter_platform.setTimezone}
+  Future<void> setTimezone(String timezone) =>
+      KlaviyoFlutterPlatform.instance.setTimezone(timezone);
+
+  /// {@macro klaviyo_flutter_platform.setCustomAttribute}
+  Future<void> setCustomAttribute(String key, String value) =>
+      KlaviyoFlutterPlatform.instance.setCustomAttribute(key, value);
+
+  /// {@macro klaviyo_flutter_platform.setBadgeCount}
+  Future<void> setBadgeCount(int count) =>
+      KlaviyoFlutterPlatform.instance.setBadgeCount(count);
 }
