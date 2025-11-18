@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'klaviyo_flutter'
-  s.version          = '0.1.0'
+  s.version          = '0.3.0'
   s.summary          = 'Klaviyo integration for Flutter'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -18,4 +18,3 @@ A new flutter plugin project.
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
 end
-

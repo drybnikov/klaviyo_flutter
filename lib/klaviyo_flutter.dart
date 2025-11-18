@@ -2,6 +2,7 @@ library klaviyo_flutter;
 
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:klaviyo_flutter/src/klaviyo_flutter_platform_interface.dart';
 import 'package:klaviyo_flutter/src/klaviyo_profile.dart';
 
@@ -28,6 +29,9 @@ class Klaviyo {
   ///
   /// Then, initialize Klaviyo in main method.
   Future<void> initialize(String apiKey) async {
+    if (apiKey.trim().isEmpty) {
+      throw ArgumentError.value(apiKey, 'apiKey', 'must not be empty');
+    }
     await KlaviyoFlutterPlatform.instance.initialize(apiKey);
     _initialized = true;
   }
@@ -186,4 +190,9 @@ class Klaviyo {
   /// {@macro klaviyo_flutter_platform.setBadgeCount}
   Future<void> setBadgeCount(int count) =>
       KlaviyoFlutterPlatform.instance.setBadgeCount(count);
+
+  @visibleForTesting
+  void debugReset() {
+    _initialized = false;
+  }
 }

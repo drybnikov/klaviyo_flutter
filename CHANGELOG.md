@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.0 (Unreleased)
+
+* Guard `Klaviyo.initialize` against empty API keys and expose a `debugReset()`
+  helper for tests.
+* Make `logEvent` metadata optional across Dart and Android, rebuild profile
+  mapping to use Klaviyo's native keys, and align latitude/longitude with double
+  precision values on every platform.
+* Expand `KlaviyoProfile` with city/country/zip/timezone fields plus
+  `copyWith`/`fromJson`, and add a dedicated Dart test suite that exercises the
+  full public API surface (`test/klaviyo_flutter_test.dart`,
+  `test/klaviyo_profile_test.dart`).
+* Modernize the example app to demonstrate initialization, profile updates,
+  event logging, push token registration, push handling, badge management, and
+  profile reset flows (`example/lib/main.dart`).
+* Introduce Android JVM tests for the plugin bridge and ship a Gradle wrapper so
+  plugin builds run in isolation (`android/src/test`, `android/gradlew`).
+
 ## 0.2.0
 
 * Add individual set profile attributes methods, thanks @Lo4D

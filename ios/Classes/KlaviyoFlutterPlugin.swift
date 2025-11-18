@@ -2,10 +2,11 @@ import Flutter
 import KlaviyoSwift
 import UIKit
 
+// swiftlint:disable identifier_name type_body_length file_length
+
 /// A class that receives and handles calls from Flutter to complete the payment.
 public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
-    UNUserNotificationCenterDelegate
-{
+    UNUserNotificationCenterDelegate {
     private static let methodChannelName = "com.rightbite.denisr/klaviyo"
 
     private let METHOD_UPDATE_PROFILE = "updateProfile"
@@ -88,6 +89,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
         completionHandler(options)
     }
 
+    // swiftlint:disable function_body_length cyclomatic_complexity
     public func handle(
         _ call: FlutterMethodCall,
         result: @escaping FlutterResult
@@ -110,6 +112,29 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
                 )
             }
             klaviyo.set(profileAttribute: key, value: stringValue)
+            result("\(name) updated")
+        }
+
+        func setNumericProfileAttribute(
+            call: FlutterMethodCall,
+            key: Profile.ProfileKey,
+            name: String,
+            argumentKey: String,
+            result: FlutterResult
+        ) {
+            guard
+                let arguments = call.arguments as? [String: Any],
+                let numericValue = extractDouble(arguments[argumentKey])
+            else {
+                return result(
+                    FlutterError(
+                        code: "invalid_args",
+                        message: "\(name) must be a numeric value",
+                        details: nil
+                    )
+                )
+            }
+            klaviyo.set(profileAttribute: key, value: numericValue)
             result("\(name) updated")
         }
 
@@ -179,23 +204,37 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             // parsing location
             let address1 = arguments["address1"] as? String
             let address2 = arguments["address2"] as? String
-            let latitude = (arguments["latitude"] as? String)?.toDouble
-            let longitude = (arguments["longitude"] as? String)?.toDouble
+            let city = arguments["city"] as? String
+            let country = arguments["country"] as? String
             let region = arguments["region"] as? String
+            let zip = arguments["zip"] as? String
+            let timezone = arguments["timezone"] as? String
+            let latitude = extractDouble(arguments["latitude"])
+            let longitude = extractDouble(arguments["longitude"])
 
-            var location: Profile.Location?
+            let hasLocationData = [
+                address1,
+                address2,
+                city,
+                country,
+                region,
+                zip,
+                timezone
+            ].contains { value in value != nil } || latitude != nil || longitude != nil
 
-            if address1 != nil && address2 != nil && latitude != nil
-                && longitude != nil && region != nil
-            {
-                location = Profile.Location(
+            let location = hasLocationData
+                ? Profile.Location(
                     address1: address1,
                     address2: address2,
+                    city: city,
+                    country: country,
                     latitude: latitude,
                     longitude: longitude,
-                    region: region
+                    region: region,
+                    zip: zip,
+                    timezone: timezone
                 )
-            }
+                : nil
 
             let profile = Profile(
                 email: arguments["email"] as? String,
@@ -247,8 +286,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             }
 
             if let properties = arguments["message"] as? [String: Any],
-                properties["_k"] != nil
-            {
+                properties["_k"] != nil {
                 klaviyo.create(
                     event: Event(
                         name: .customEvent("$opened_push"),
@@ -383,17 +421,21 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             )
 
         case METHOD_SET_LATITUDE:
-            setProfileAttribute(
+            setNumericProfileAttribute(
+                call: call,
                 key: .latitude,
                 name: "Latitude",
-                argumentKey: "latitude"
+                argumentKey: "latitude",
+                result: result
             )
 
         case METHOD_SET_LONGITUDE:
-            setProfileAttribute(
+            setNumericProfileAttribute(
+                call: call,
                 key: .longitude,
                 name: "Longitude",
-                argumentKey: "longitude"
+                argumentKey: "longitude",
+                result: result
             )
 
         case METHOD_SET_REGION:
@@ -431,12 +473,7 @@ public class KlaviyoFlutterPlugin: NSObject, FlutterPlugin,
             result(FlutterMethodNotImplemented)
         }
     }
-}
-
-extension String {
-    var toDouble: Double {
-        return Double(self) ?? 0.0
-    }
+    // swiftlint:enable function_body_length cyclomatic_complexity
 }
 
 extension Data {
@@ -451,12 +488,27 @@ extension Data {
                     byte: nil as UInt8?
                 )
             ) { partialResult, nibble in
-                if let p = partialResult.byte {
-                    partialResult.data.append(p + nibble)
+                if let pendingNibble = partialResult.byte {
+                    partialResult.data.append(pendingNibble + nibble)
                     partialResult.byte = nil
                 } else {
                     partialResult.byte = nibble << 4
                 }
             }.data
     }
+}
+
+// swiftlint:enable identifier_name type_body_length
+
+private func extractDouble(_ rawValue: Any?) -> Double? {
+    if let value = rawValue as? Double {
+        return value
+    }
+    if let numberValue = rawValue as? NSNumber {
+        return numberValue.doubleValue
+    }
+    if let stringValue = rawValue as? String {
+        return Double(stringValue)
+    }
+    return nil
 }
